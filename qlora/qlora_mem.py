@@ -30,8 +30,31 @@ class StreamLogger:
         pass
 
 
-def configure_logging(log_dir: Path, run_name: str):
-    log_file = log_dir / f"{run_name}-{datetime.now()}.log"
+@dataclass
+class RunSettings:
+    run_name: Optional[str]
+    run_dir: Optional[Path]
+    quantized: bool
+    lora: bool
+    non_reentrant: bool
+    full_profile: bool
+    gradient_accumulation_steps: int
+    model_id: str
+
+    def __post_init__(self):
+        self.run_name = self.run_name or get_run_name(self)
+        self.run_dir = self.run_dir or create_run_directory(self.run_name)
+
+
+@dataclass
+class TrainingConfigs:
+    quant: Optional[BitsAndBytesConfig]
+    lora: Optional[LoraConfig]
+    train: TrainingArguments
+
+
+def configure_logging(settings: RunSettings):
+    log_file = settings.run_dir / f"{settings.run_name}-{datetime.now()}.log"
     logging.basicConfig(
         level=logging.INFO,
         format="%(message)s",
@@ -57,14 +80,7 @@ def create_run_directory(run_name: str) -> Path:
     return run_dir
 
 
-@dataclass
-class TrainingConfigs:
-    quant: Optional[BitsAndBytesConfig]
-    lora: Optional[LoraConfig]
-    train: TrainingArguments
-
-
-def get_cfgs(quantized: bool, lora: bool, non_reentrant: bool, run_dir: Path) -> TrainingConfigs:
+def get_cfgs(settings: RunSettings) -> TrainingConfigs:
     logging.info("Configuring training settings")
     cfgs = TrainingConfigs(
         quant=BitsAndBytesConfig(
@@ -72,7 +88,7 @@ def get_cfgs(quantized: bool, lora: bool, non_reentrant: bool, run_dir: Path) ->
             bnb_4bit_compute_dtype=torch.bfloat16,
             # bnb_4bit_quant_type="nf4"
         )
-        if quantized
+        if settings.quantized
         else None,
         lora=LoraConfig(
             r=8,
@@ -80,20 +96,22 @@ def get_cfgs(quantized: bool, lora: bool, non_reentrant: bool, run_dir: Path) ->
             bias="none",
             task_type="CAUSAL_LM",
         )
-        if lora
+        if settings.lora
         else None,
         train=TrainingArguments(
-            output_dir=run_dir / "results",
+            output_dir=settings.run_dir / "results",
             save_strategy="no",
             num_train_epochs=1,
             per_device_train_batch_size=2,
             logging_dir="./logs",
             logging_steps=10,
             bf16=True,
-            gradient_checkpointing_kwargs={"use_reentrant": non_reentrant},
+            gradient_accumulation_steps=settings.gradient_accumulation_steps,
+            gradient_checkpointing_kwargs={"use_reentrant": settings.non_reentrant},
         ),
     )
-    logging.info(f"Training settings: {cfgs}")
+    logging.info(f"Training settings (short): {cfgs!r}")
+    logging.info(f"Training settings (long): {cfgs!r}")
     return cfgs
 
 
@@ -132,22 +150,24 @@ def start_memory_recording(full_profile: bool, max_entries: int = 100000):
 def stop_memory_recording(full_profile: bool):
     # we need to clear the cache after quantization and lora adaption etc, otherwise you get spurious results
     torch.cuda.empty_cache()
+
     if full_profile:
         logging.info("Stopping CUDA memory profiling.")
         torch.cuda.memory._record_memory_history(enabled=None)
 
 
-def export_memory_snapshot(full_profile: bool, run_dir: Path, file_prefix: str):
+def export_memory_snapshot(full_profile: bool, settings: RunSettings):
     if full_profile:
         logging.info("Exporting CUDA memory profiling data.")
-        torch.cuda.memory._dump_snapshot(run_dir / "memory_snapshot.pickle")
+        torch.cuda.memory._dump_snapshot(settings.run_dir / "memory_snapshot.pickle")
 
 
-def get_run_name(quantized: bool, lora: bool, non_reentrant: bool, model_id: str) -> str:
+def get_run_name(settings: RunSettings) -> str:
     return (
-        f"run--{'q' if quantized else 'nq'}-{'lora' if lora else 'vanillla'}-"
-        f"{'non_reentrant' if non_reentrant else 'reentrant'}-"
-        f"{model_id.split('/')[-1]}"
+        f"run--{'q' if settings.quantized else 'nq'}-{'lora' if settings.lora else 'vanillla'}-"
+        f"{'non_reentrant' if settings.non_reentrant else 'reentrant'}-"
+        f"grad_acc_steps_{settings.gradient_accumulation_steps}-"
+        f"{settings.model_id.split('/')[-1]}"
     )
 
 
@@ -157,15 +177,25 @@ def main(
     lora: bool = False,
     non_reentrant: bool = False,
     full_profile: bool = True,
+    gradient_accumulation_steps: int = 8,
     model_id: str = "facebook/opt-350m",
 ):
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA is not available. Aborting...")
 
-    run_name = run_name or get_run_name(quantized, lora, non_reentrant, model_id)
-    run_dir = create_run_directory(run_name)
-    configure_logging(log_dir=run_dir, run_name=run_name)
-    cfgs = get_cfgs(quantized, lora, non_reentrant, run_dir)
+    run_settings = RunSettings(
+        run_name,
+        None,
+        quantized,
+        lora,
+        non_reentrant,
+        full_profile,
+        gradient_accumulation_steps,
+        model_id,
+    )
+
+    configure_logging(run_settings)
+    cfgs = get_cfgs(run_settings)
 
     logging.info(f"Starting training run: {run_name}")
 
@@ -178,7 +208,7 @@ def main(
 
     start_memory_recording(full_profile)
     trainer.train()
-    export_memory_snapshot(full_profile, run_dir, run_name)
+    export_memory_snapshot(full_profile, run_settings)
     stop_memory_recording(full_profile)
 
     max_mem_in_bytes = torch.cuda.max_memory_allocated()
