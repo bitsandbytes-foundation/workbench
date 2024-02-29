@@ -164,7 +164,7 @@ def export_memory_snapshot(full_profile: bool, settings: RunSettings):
 
 def get_run_name(settings: RunSettings) -> str:
     return (
-        f"run--{'q' if settings.quantized else 'nq'}-{'lora' if settings.lora else 'vanillla'}-"
+        f"run--{'q' if settings.quantized else 'nq'}-{'lora' if settings.lora else 'vanilla'}-"
         f"{'reentrant' if settings.use_reentrant else 'non_reentrant'}-"
         f"grad_acc_steps_{settings.gradient_accumulation_steps}-"
         f"{settings.model_id.split('/')[-1]}"
