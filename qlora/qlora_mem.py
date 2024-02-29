@@ -107,6 +107,7 @@ def get_cfgs(settings: RunSettings) -> TrainingConfigs:
             logging_steps=10,
             bf16=True,
             gradient_accumulation_steps=settings.gradient_accumulation_steps,
+            gradient_checkpointing=True,
             gradient_checkpointing_kwargs={"use_reentrant": settings.use_reentrant},
         ),
     )
