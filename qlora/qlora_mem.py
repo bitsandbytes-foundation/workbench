@@ -130,6 +130,8 @@ def start_memory_recording(full_profile: bool, max_entries: int = 100000):
 
 
 def stop_memory_recording(full_profile: bool):
+    # we need to clear the cache after quantization and lora adaption etc, otherwise you get spurious results
+    torch.cuda.empty_cache()
     if full_profile:
         logging.info("Stopping CUDA memory profiling.")
         torch.cuda.memory._record_memory_history(enabled=None)
