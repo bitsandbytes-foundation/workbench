@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 import logging
 from pathlib import Path
+import sys
 from typing import Optional
 
 from datasets import load_dataset
@@ -16,16 +17,31 @@ from transformers import (
 from trl import SFTTrainer
 
 
+class StreamLogger:
+    def __init__(self, logger, level):
+        self.logger = logger
+        self.level = level
+
+    def write(self, message):
+        if message.rstrip() != "":
+            self.logger.log(self.level, message.rstrip())
+
+    def flush(self):
+        pass
+
+
 def configure_logging(log_dir: Path, run_name: str):
     log_file = log_dir / f"{run_name}-{datetime.now()}.log"
     logging.basicConfig(
         level=logging.INFO,
-        handlers=[
-            logging.StreamHandler(),  # For stdout logging
-            logging.FileHandler(filename=log_file.as_posix(), mode="w"),  # For file logging
-        ],
         format="%(message)s",
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler(filename=log_file.as_posix(), mode="w"),
+        ],
     )
+    sys.stdout = StreamLogger(logging.getLogger("stdout"), logging.INFO)
+    sys.stderr = StreamLogger(logging.getLogger("stderr"), logging.ERROR)
     logging.info(f"Logging configured to use {log_file}")
 
 
@@ -125,6 +141,14 @@ def export_memory_snapshot(full_profile: bool, run_dir: Path, file_prefix: str):
         torch.cuda.memory._dump_snapshot(run_dir / "memory_snapshot.pickle")
 
 
+def get_run_name(quantized: bool, lora: bool, non_reentrant: bool, model_id: str) -> str:
+    return (
+        f"run--{'q' if quantized else 'nq'}-{'lora' if lora else 'vanillla'}-"
+        f"{'non_reentrant' if non_reentrant else 'reentrant'}-"
+        f"{model_id.split('/')[-1]}"
+    )
+
+
 def main(
     run_name: Optional[str] = None,
     quantized: bool = False,
@@ -136,12 +160,7 @@ def main(
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA is not available. Aborting...")
 
-    run_name = (
-        run_name
-        or f"run--{'q' if quantized else 'nq'}-{'lora' if lora else ''}-"
-        f"{'non_reentrant' if non_reentrant else 'reentrant'}-"
-        f"{model_id.split('/')[-1]}"
-    )
+    run_name = run_name or get_run_name(quantized, lora, non_reentrant, model_id)
     run_dir = create_run_directory(run_name)
     configure_logging(log_dir=run_dir, run_name=run_name)
     cfgs = get_cfgs(quantized, lora, non_reentrant, run_dir)
@@ -160,6 +179,5 @@ def main(
     export_memory_snapshot(full_profile, run_dir, run_name)
     stop_memory_recording(full_profile)
 
-    max_mem = torch.cuda.max_memory_allocated()  # Get max memory allocated in bytes
-    human_readable_max_mem = human_readable_size(max_mem)
-    logging.info(f"Peak memory usage: {human_readable_max_mem}")
+    max_mem_in_bytes = torch.cuda.max_memory_allocated()
+    logging.info(f"Peak memory usage: {human_readable_size(max_mem_in_bytes)}")
