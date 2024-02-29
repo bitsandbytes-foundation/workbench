@@ -36,7 +36,7 @@ class RunSettings:
     run_dir: Optional[Path]
     quantized: bool
     lora: bool
-    non_reentrant: bool
+    use_reentrant: bool
     full_profile: bool
     gradient_accumulation_steps: int
     model_id: str
@@ -107,7 +107,7 @@ def get_cfgs(settings: RunSettings) -> TrainingConfigs:
             logging_steps=10,
             bf16=True,
             gradient_accumulation_steps=settings.gradient_accumulation_steps,
-            gradient_checkpointing_kwargs={"use_reentrant": settings.non_reentrant},
+            gradient_checkpointing_kwargs={"use_reentrant": settings.use_reentrant},
         ),
     )
     logging.info(f"Training settings (short): {settings!r}")
@@ -165,7 +165,7 @@ def export_memory_snapshot(full_profile: bool, settings: RunSettings):
 def get_run_name(settings: RunSettings) -> str:
     return (
         f"run--{'q' if settings.quantized else 'nq'}-{'lora' if settings.lora else 'vanillla'}-"
-        f"{'non_reentrant' if settings.non_reentrant else 'reentrant'}-"
+        f"{'reentrant' if settings.use_reentrant else 'non_reentrant'}-"
         f"grad_acc_steps_{settings.gradient_accumulation_steps}-"
         f"{settings.model_id.split('/')[-1]}"
     )
@@ -175,7 +175,7 @@ def main(
     run_name: Optional[str] = None,
     quantized: bool = False,
     lora: bool = False,
-    non_reentrant: bool = False,
+    use_reentrant: bool = False,
     full_profile: bool = True,
     gradient_accumulation_steps: int = 8,
     model_id: str = "facebook/opt-350m",
@@ -188,7 +188,7 @@ def main(
         None,
         quantized,
         lora,
-        non_reentrant,
+        use_reentrant,
         full_profile,
         gradient_accumulation_steps,
         model_id,
