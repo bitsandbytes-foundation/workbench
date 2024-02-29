@@ -110,7 +110,7 @@ def get_cfgs(settings: RunSettings) -> TrainingConfigs:
             gradient_checkpointing_kwargs={"use_reentrant": settings.non_reentrant},
         ),
     )
-    logging.info(f"Training settings (short): {cfgs!r}")
+    logging.info(f"Training settings (short): {settings!r}")
     logging.info(f"Training settings (long): {cfgs!r}")
     return cfgs
 
