@@ -37,9 +37,10 @@ class RunSettings:
     quantized: bool
     lora: bool
     use_reentrant: bool
-    full_profile: bool
     gradient_accumulation_steps: int
+    batch_size: int
     model_id: str
+    full_profile: bool
 
     def __post_init__(self):
         self.run_name = self.run_name or get_run_name(self)
@@ -102,7 +103,7 @@ def get_cfgs(settings: RunSettings) -> TrainingConfigs:
             output_dir=settings.run_dir / "results",
             save_strategy="no",
             num_train_epochs=1,
-            per_device_train_batch_size=2,
+            per_device_train_batch_size=settings.batch_size,
             logging_dir="./logs",
             logging_steps=10,
             bf16=True,
@@ -177,9 +178,10 @@ def main(
     quantized: bool = False,
     lora: bool = False,
     use_reentrant: bool = False,
-    full_profile: bool = True,
     gradient_accumulation_steps: int = 8,
+    batch_size: int = 1,
     model_id: str = "facebook/opt-350m",
+    full_profile: bool = True,
 ):
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA is not available. Aborting...")
@@ -190,9 +192,10 @@ def main(
         quantized,
         lora,
         use_reentrant,
-        full_profile,
         gradient_accumulation_steps,
+        batch_size,
         model_id,
+        full_profile,
     )
 
     configure_logging(run_settings)
