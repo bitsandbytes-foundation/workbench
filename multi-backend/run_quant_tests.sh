@@ -49,5 +49,3 @@ echo -e "\n8-bit Test Error Summary:" >> "$SUMMARY_LOG"
 rg -o 'E\s\s+(.*)' "$EIGHTBIT_LOG" -r '$1' | sort | uniq -c | sort -rn >> "$SUMMARY_LOG"
 
 cat "$SUMMARY_LOG"
-
-cd "$SCRIPT_DI
