@@ -1,0 +1,5 @@
+4-bit Test Error Summary:
+      1 RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::Half != float
+
+8-bit Test Error Summary:
+      1 RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::Half != float

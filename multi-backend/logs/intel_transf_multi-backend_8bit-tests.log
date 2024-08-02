@@ -1,0 +1,117 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.19, pytest-8.2.2, pluggy-1.5.0 -- /home/sdp/.condax/mamba/envs/bnb/bin/python3.8
+cachedir: .pytest_cache
+rootdir: /home/sdp/src/transformers
+configfile: pyproject.toml
+collecting ... collected 1 item
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training FAILED [100%]
+
+=================================== FAILURES ===================================
+_____________________ MixedInt8TestTraining.test_training ______________________
+
+self = <bnb.test_mixed_int8.MixedInt8TestTraining testMethod=test_training>
+
+    def test_training(self):
+        if version.parse(importlib.metadata.version("bitsandbytes")) < version.parse("0.37.0"):
+            self.skipTest(reason="This test requires bitsandbytes>=0.37.0")
+    
+        # Step 1: freeze all parameters
+        model = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True)
+    
+        if torch.cuda.is_available():
+            self.assertEqual(set(model.hf_device_map.values()), {torch.cuda.current_device()})
+        else:
+            self.assertTrue(all(param.device.type == "cpu" for param in model.parameters()))
+    
+        for param in model.parameters():
+            param.requires_grad = False  # freeze the model - train adapters later
+            if param.ndim == 1:
+                # cast the small parameters (e.g. layernorm) to fp32 for stability
+                param.data = param.data.to(torch.float32)
+    
+        # Step 2: add adapters
+        for _, module in model.named_modules():
+            if "OPTAttention" in repr(type(module)):
+                module.q_proj = LoRALayer(module.q_proj, rank=16)
+                module.k_proj = LoRALayer(module.k_proj, rank=16)
+                module.v_proj = LoRALayer(module.v_proj, rank=16)
+    
+        # Step 3: dummy batch
+        batch = self.tokenizer("Test batch ", return_tensors="pt").to(device)
+    
+        # Step 4: Check if the gradient is not None
+        with torch.cuda.amp.autocast():
+>           out = model.forward(**batch)
+
+tests/quantization/bnb/test_mixed_int8.py:881: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/opt/modeling_opt.py:1011: in forward
+    outputs = self.model.decoder(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
+    return forward_call(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:777: in forward
+    layer_outputs = decoder_layer(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
+    return forward_call(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:418: in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
+    return forward_call(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:140: in forward
+    query_states = self.q_proj(hidden_states) * self.scaling
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/quantization/bnb/test_mixed_int8.py:79: in forward
+    return self.module(input, *args, **kwargs) + self.adapter(input)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/container.py:217: in forward
+    input = module(input)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
+    return forward_call(*args, **kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = Linear(in_features=1024, out_features=16, bias=False)
+input = tensor([[[ 0.0001, -0.0733, -0.0286,  ...,  0.0008,  0.0229, -0.0093],
+         [-0.0197,  0.0712,  0.0296,  ..., -0.0...-0.0445,  0.0259],
+         [-0.0383,  0.0467,  0.0092,  ..., -0.0256,  0.0060, -0.0399]]],
+       dtype=torch.float16)
+
+    def forward(self, input: Tensor) -> Tensor:
+>       return F.linear(input, self.weight, self.bias)
+E       RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::Half != float
+
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/linear.py:116: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+`low_cpu_mem_usage` was None, now set to True since model is quantized.
+=============================== warnings summary ===============================
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/_pytest/config/__init__.py:1448
+  /home/sdp/.condax/mamba/envs/bnb/lib/python3.8/site-packages/_pytest/config/__init__.py:1448: PytestConfigWarning: Unknown config option: doctest_glob
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
+  /home/sdp/.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+    warnings.warn(
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
+  /home/sdp/src/bnb/bitsandbytes/autograd/_functions.py:327: UserWarning: MatMul8bitLt: inputs will be cast from torch.float16 to torch.bfloat16 during quantization
+    warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to {A_dtype} during quantization")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 1 failed, 4 warnings in 15.06s ========================
