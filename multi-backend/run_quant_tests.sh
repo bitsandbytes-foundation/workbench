@@ -40,12 +40,12 @@ export RUN_SLOW=1
 ( pytest tests/quantization/bnb/test_4bit.py -rsx -v 2>&1 || true ) | tee "$FOURBIT_LOG"
 
 echo "4-bit Test Error Summary:" > "$SUMMARY_LOG"
-rg -o 'E\s\s+(.*)' "$FOURBIT_LOG" -r '$1' | sort | uniq -c | sort -rn >> "$SUMMARY_LOG"
+{ rg -o 'E\s\s+(.*)' "$FOURBIT_LOG" -r '$1' | sort | uniq -c | sort -rn || echo "No errors found in 4-bit tests."; } >> "$SUMMARY_LOG"
 
 # Run 8-bit tests and log output, ensuring the script continues even if tests fail
 ( pytest tests/quantization/bnb/test_mixed_int8.py -rsx -v 2>&1 || true ) | tee "$EIGHTBIT_LOG"
 
 echo -e "\n8-bit Test Error Summary:" >> "$SUMMARY_LOG"
-rg -o 'E\s\s+(.*)' "$EIGHTBIT_LOG" -r '$1' | sort | uniq -c | sort -rn >> "$SUMMARY_LOG"
+{ rg -o 'E\s\s+(.*)' "$EIGHTBIT_LOG" -r '$1' | sort | uniq -c | sort -rn || echo "No errors found in 8-bit tests."; } >> "$SUMMARY_LOG"
 
 cat "$SUMMARY_LOG"
