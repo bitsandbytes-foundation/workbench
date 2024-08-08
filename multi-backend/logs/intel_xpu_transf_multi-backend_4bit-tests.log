@@ -1,0 +1,2932 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.0, pytest-8.2.2, pluggy-1.5.0 -- /home/fanli/miniforge3/envs/ipex-ww28/bin/python3.10
+cachedir: .pytest_cache
+hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase(PosixPath('/workspace1/fanli/local-workspace/tmp/transformers/.hypothesis/examples'))
+rootdir: /workspace1/fanli/local-workspace/tmp/transformers
+configfile: pyproject.toml
+plugins: typeguard-4.3.0, hydra-core-1.3.2, rich-0.1.1, hypothesis-6.108.5, timeout-2.3.1, excel-1.7.0, xdist-3.6.1
+collecting ... collected 43 items
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_bnb_4bit_wrong_config FAILED [  2%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_device_and_dtype_assignment FAILED [  4%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_fp32_4bit_conversion FAILED [  6%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality FAILED [  9%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality_config FAILED [ 11%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality_dequantize FAILED [ 13%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_linear_are_4bit FAILED [ 16%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_memory_footprint FAILED [ 18%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_original_dtype FAILED [ 20%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_quantization_config_json_serialization FAILED [ 23%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_quantization_num_parameters FAILED [ 25%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_rwkv_4bit FAILED  [ 27%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32 FAILED [ 30%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32 FAILED [ 32%]
+tests/quantization/bnb/test_4bit.py::Classes4BitModelTest::test_correct_head_class FAILED [ 34%]
+tests/quantization/bnb/test_4bit.py::Pipeline4BitTest::test_pipeline FAILED [ 37%]
+tests/quantization/bnb/test_4bit.py::Pipeline4BitTest::test_pipeline ERROR [ 37%]
+tests/quantization/bnb/test_4bit.py::Bnb4bitTestMultiGpu::test_multi_gpu_loading SKIPPED [ 39%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training FAILED [ 41%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_bnb_4bit_wrong_config FAILED [ 44%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_device_and_dtype_assignment FAILED [ 46%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_fp32_4bit_conversion FAILED [ 48%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_generate_quality FAILED [ 51%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_generate_quality_config FAILED [ 53%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_generate_quality_dequantize FAILED [ 55%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_linear_are_4bit FAILED [ 58%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_memory_footprint FAILED [ 60%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_original_dtype FAILED [ 62%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_quantization_config_json_serialization FAILED [ 65%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_quantization_num_parameters FAILED [ 67%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_rwkv_4bit FAILED [ 69%]
+tests/quantization/bnb/test_4bit.py::BaseSerializationTest::test_serialization SKIPPED [ 72%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_double_safe SKIPPED [ 74%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_double_unsafe SKIPPED [ 76%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_single_safe FAILED [ 79%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_single_unsafe FAILED [ 81%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_double_unsafe SKIPPED [ 83%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_single_safe FAILED [ 86%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_single_unsafe FAILED [ 88%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_serialization SKIPPED [ 90%]
+tests/quantization/bnb/test_4bit.py::BloomSerializationTest::test_serialization SKIPPED [ 93%]
+tests/quantization/bnb/test_4bit.py::GPTSerializationTest::test_serialization SKIPPED [ 95%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestBasicConfigTest::test_load_in_4_and_8_bit_fails PASSED [ 97%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestBasicConfigTest::test_set_load_in_8_bit PASSED [100%]
+
+==================================== ERRORS ====================================
+_____________ ERROR at teardown of Pipeline4BitTest.test_pipeline ______________
+
+self = <bnb.test_4bit.Pipeline4BitTest testMethod=test_pipeline>
+
+    def tearDown(self):
+        r"""
+        TearDown function needs to be called at the end of each test to free the GPU memory and cache, also to
+        avoid unexpected behaviors. Please see: https://discuss.pytorch.org/t/how-can-we-release-gpu-memory-cache/14530/27
+        """
+>       del self.pipe
+E       AttributeError: pipe
+
+tests/quantization/bnb/test_4bit.py:452: AttributeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+=================================== FAILURES ===================================
+____________________ Bnb4BitTest.test_bnb_4bit_wrong_config ____________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_bnb_4bit_wrong_config>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22624b63b0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ Bnb4BitTest.test_device_and_dtype_assignment _________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_device_and_dtype_assignment>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22624b4550>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________________ Bnb4BitTest.test_fp32_4bit_conversion _____________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_fp32_4bit_conversion>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f20ba96d4e0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________________ Bnb4BitTest.test_generate_quality _______________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_generate_quality>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f23061c9330>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ Bnb4BitTest.test_generate_quality_config ___________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_generate_quality_config>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f23061c9fc0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ Bnb4BitTest.test_generate_quality_dequantize _________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_generate_quality_dequantize>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22624b4700>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________________ Bnb4BitTest.test_linear_are_4bit _______________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_linear_are_4bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f23063bb6a0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________________ Bnb4BitTest.test_memory_footprint _______________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_memory_footprint>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f23262a5150>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________________ Bnb4BitTest.test_original_dtype ________________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_original_dtype>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22624b4640>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________ Bnb4BitTest.test_quantization_config_json_serialization ____________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_quantization_config_json_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f23260dc070>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ Bnb4BitTest.test_quantization_num_parameters _________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_quantization_num_parameters>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f2306008040>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+__________________________ Bnb4BitTest.test_rwkv_4bit __________________________
+
+self = <bnb.test_4bit.Bnb4BitTest testMethod=test_rwkv_4bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f2312b0d600>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________ Bnb4BitT5Test.test_inference_with_keep_in_fp32 ________________
+
+self = <bnb.test_4bit.Bnb4BitT5Test testMethod=test_inference_with_keep_in_fp32>
+
+    def test_inference_with_keep_in_fp32(self):
+        r"""
+        Test whether it is possible to mix both `4bit` and `fp32` weights when using `keep_in_fp32_modules` correctly.
+        `flan-t5-small` uses `T5DenseGatedActDense` whereas `google-t5/t5-small` uses `T5DenseReluDense`. We need to test
+        both cases.
+        """
+        from transformers import T5ForConditionalGeneration
+    
+        # test with `google-t5/t5-small`
+>       model = T5ForConditionalGeneration.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:376: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f2305fa3d30>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________ Bnb4BitT5Test.test_inference_without_keep_in_fp32 _______________
+
+self = <bnb.test_4bit.Bnb4BitT5Test testMethod=test_inference_without_keep_in_fp32>
+
+    def test_inference_without_keep_in_fp32(self):
+        r"""
+        Test whether it is possible to mix both `4bit` and `fp32` weights when using `keep_in_fp32_modules` correctly.
+        `flan-t5-small` uses `T5DenseGatedActDense` whereas `google-t5/t5-small` uses `T5DenseReluDense`. We need to test
+        both cases.
+        """
+        from transformers import T5ForConditionalGeneration
+    
+        modules = T5ForConditionalGeneration._keep_in_fp32_modules
+        T5ForConditionalGeneration._keep_in_fp32_modules = None
+    
+        # test with `google-t5/t5-small`
+>       model = T5ForConditionalGeneration.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:355: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f230631bf70>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ Classes4BitModelTest.test_correct_head_class _________________
+
+self = <bnb.test_4bit.Classes4BitModelTest testMethod=test_correct_head_class>
+
+    def setUp(self):
+        super().setUp()
+        # model_name
+        self.model_name = "bigscience/bloom-560m"
+        self.seq_to_seq_name = "google-t5/t5-small"
+    
+        # Different types of model
+    
+>       self.base_model = AutoModel.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:402: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f4c2be50>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________________ Pipeline4BitTest.test_pipeline ________________________
+
+self = <bnb.test_4bit.Pipeline4BitTest testMethod=test_pipeline>
+
+    def test_pipeline(self):
+        r"""
+        The aim of this test is to verify that the mixed 4bit is compatible with `pipeline` from transformers. Since
+        we used pipline for inference speed benchmarking we want to make sure that this feature does not break anything
+        on pipline.
+        """
+        # self._clear_cuda_cache()
+>       self.pipe = pipeline(
+            "text-generation",
+            model=self.model_name,
+            model_kwargs={
+                "device_map": "auto",
+                "load_in_4bit": True,
+                # float16 isn't supported on CPU, use bfloat16 instead
+                "torch_dtype": torch.bloat16 if device == "cpu" else torch.float16,
+            },
+            max_new_tokens=self.MAX_NEW_TOKENS,
+        )
+
+tests/quantization/bnb/test_4bit.py:464: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/pipelines/__init__.py:895: in pipeline
+    framework, model = infer_framework_load_model(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+model = 'bigscience/bloom-1b7'
+config = BloomConfig {
+  "_name_or_path": "bigscience/bloom-1b7",
+  "apply_residual_connection_post_layernorm": false,
+  "archi..."float16",
+  "transformers_version": "4.45.0.dev0",
+  "unk_token_id": 0,
+  "use_cache": true,
+  "vocab_size": 250880
+}
+
+model_classes = {'pt': (<class 'transformers.models.auto.modeling_auto.AutoModelForCausalLM'>,), 'tf': ()}
+task = 'text-generation', framework = None
+model_kwargs = {'_commit_hash': 'cc72a88036c2fb937d65efeacc57a0c2ef5d6fe5', '_from_pipeline': 'text-generation', 'device_map': 'auto', 'load_in_4bit': True, ...}
+class_tuple = (<class 'transformers.models.auto.modeling_auto.AutoModelForCausalLM'>, <class 'transformers.models.bloom.modeling_bloom.BloomForCausalLM'>)
+look_pt = True, look_tf = False
+classes = [<class 'transformers.models.bloom.modeling_bloom.BloomForCausalLM'>]
+architecture = 'BloomForCausalLM'
+transformers_module = <module 'transformers' from '/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/__init__.py'>
+_class = <class 'transformers.models.bloom.modeling_bloom.BloomForCausalLM'>
+
+    def infer_framework_load_model(
+        model,
+        config: AutoConfig,
+        model_classes: Optional[Dict[str, Tuple[type]]] = None,
+        task: Optional[str] = None,
+        framework: Optional[str] = None,
+        **model_kwargs,
+    ):
+        """
+        Select framework (TensorFlow or PyTorch) to use from the `model` passed. Returns a tuple (framework, model).
+    
+        If `model` is instantiated, this function will just infer the framework from the model class. Otherwise `model` is
+        actually a checkpoint name and this method will try to instantiate it using `model_classes`. Since we don't want to
+        instantiate the model twice, this model is returned for use by the pipeline.
+    
+        If both frameworks are installed and available for `model`, PyTorch is selected.
+    
+        Args:
+            model (`str`, [`PreTrainedModel`] or [`TFPreTrainedModel]`):
+                The model to infer the framework from. If `str`, a checkpoint name. The model to infer the framewrok from.
+            config ([`AutoConfig`]):
+                The config associated with the model to help using the correct class
+            model_classes (dictionary `str` to `type`, *optional*):
+                A mapping framework to class.
+            task (`str`):
+                The task defining which pipeline will be returned.
+            model_kwargs:
+                Additional dictionary of keyword arguments passed along to the model's `from_pretrained(...,
+                **model_kwargs)` function.
+    
+        Returns:
+            `Tuple`: A tuple framework, model.
+        """
+        if not is_tf_available() and not is_torch_available():
+            raise RuntimeError(
+                "At least one of TensorFlow 2.0 or PyTorch should be installed. "
+                "To install TensorFlow 2.0, read the instructions at https://www.tensorflow.org/install/ "
+                "To install PyTorch, read the instructions at https://pytorch.org/."
+            )
+        if isinstance(model, str):
+            model_kwargs["_from_pipeline"] = task
+            class_tuple = ()
+            look_pt = is_torch_available() and framework in {"pt", None}
+            look_tf = is_tf_available() and framework in {"tf", None}
+            if model_classes:
+                if look_pt:
+                    class_tuple = class_tuple + model_classes.get("pt", (AutoModel,))
+                if look_tf:
+                    class_tuple = class_tuple + model_classes.get("tf", (TFAutoModel,))
+            if config.architectures:
+                classes = []
+                for architecture in config.architectures:
+                    transformers_module = importlib.import_module("transformers")
+                    if look_pt:
+                        _class = getattr(transformers_module, architecture, None)
+                        if _class is not None:
+                            classes.append(_class)
+                    if look_tf:
+                        _class = getattr(transformers_module, f"TF{architecture}", None)
+                        if _class is not None:
+                            classes.append(_class)
+                class_tuple = class_tuple + tuple(classes)
+    
+            if len(class_tuple) == 0:
+                raise ValueError(f"Pipeline cannot infer suitable model classes from {model}")
+    
+            all_traceback = {}
+            for model_class in class_tuple:
+                kwargs = model_kwargs.copy()
+                if framework == "pt" and model.endswith(".h5"):
+                    kwargs["from_tf"] = True
+                    logger.warning(
+                        "Model might be a TensorFlow model (ending with `.h5`) but TensorFlow is not available. "
+                        "Trying to load the model with PyTorch."
+                    )
+                elif framework == "tf" and model.endswith(".bin"):
+                    kwargs["from_pt"] = True
+                    logger.warning(
+                        "Model might be a PyTorch model (ending with `.bin`) but PyTorch is not available. "
+                        "Trying to load the model with Tensorflow."
+                    )
+    
+                try:
+                    model = model_class.from_pretrained(model, **kwargs)
+                    if hasattr(model, "eval"):
+                        model = model.eval()
+                    # Stop loading on the first successful load.
+                    break
+                except (OSError, ValueError):
+                    all_traceback[model_class.__name__] = traceback.format_exc()
+                    continue
+    
+            if isinstance(model, str):
+                error = ""
+                for class_name, trace in all_traceback.items():
+                    error += f"while loading with {class_name}, an error is thrown:\n{trace}\n"
+>               raise ValueError(
+                    f"Could not load model {model} with any of the following classes: {class_tuple}. See the original errors:\n\n{error}\n"
+                )
+E               ValueError: Could not load model bigscience/bloom-1b7 with any of the following classes: (<class 'transformers.models.auto.modeling_auto.AutoModelForCausalLM'>, <class 'transformers.models.bloom.modeling_bloom.BloomForCausalLM'>). See the original errors:
+E               
+E               while loading with AutoModelForCausalLM, an error is thrown:
+E               Traceback (most recent call last):
+E                 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/pipelines/base.py", line 286, in infer_framework_load_model
+E                   model = model_class.from_pretrained(model, **kwargs)
+E                 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+E                   return model_class.from_pretrained(
+E                 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/modeling_utils.py", line 3891, in from_pretrained
+E                   hf_quantizer.validate_environment(device_map=device_map)
+E                 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/quantizers/quantizer_bnb_4bit.py", line 106, in validate_environment
+E                   raise ValueError(
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details. 
+E               
+E               while loading with BloomForCausalLM, an error is thrown:
+E               Traceback (most recent call last):
+E                 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/pipelines/base.py", line 286, in infer_framework_load_model
+E                   model = model_class.from_pretrained(model, **kwargs)
+E                 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/modeling_utils.py", line 3891, in from_pretrained
+E                   hf_quantizer.validate_environment(device_map=device_map)
+E                 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/quantizers/quantizer_bnb_4bit.py", line 106, in validate_environment
+E                   raise ValueError(
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/pipelines/base.py:299: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________________ Bnb4BitTestTraining.test_training _______________________
+
+self = <bnb.test_4bit.Bnb4BitTestTraining testMethod=test_training>
+
+    def test_training(self):
+        if version.parse(importlib.metadata.version("bitsandbytes")) < version.parse("0.37.0"):
+            self.skipTest(reason="This test requires bitsandbytes >= 0.37.0")
+    
+        # Step 1: freeze all parameters
+        model = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True)
+    
+>       self.assertEqual(set(model.hf_device_map.values()), {torch.cuda.current_device()})
+
+tests/quantization/bnb/test_4bit.py:521: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OPTForCausalLM(
+  (model): OPTModel(
+    (decoder): OPTDecoder(
+      (embed_tokens): Embedding(50272, 512, padding_id...entwise_affine=True)
+        )
+      )
+    )
+  )
+  (lm_head): Linear(in_features=512, out_features=50272, bias=False)
+)
+name = 'hf_device_map'
+
+    def __getattr__(self, name: str) -> Any:
+        if '_parameters' in self.__dict__:
+            _parameters = self.__dict__['_parameters']
+            if name in _parameters:
+                return _parameters[name]
+        if '_buffers' in self.__dict__:
+            _buffers = self.__dict__['_buffers']
+            if name in _buffers:
+                return _buffers[name]
+        if '_modules' in self.__dict__:
+            modules = self.__dict__['_modules']
+            if name in modules:
+                return modules[name]
+>       raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+E       AttributeError: 'OPTForCausalLM' object has no attribute 'hf_device_map'
+
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1704: AttributeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+`low_cpu_mem_usage` was None, now set to True since model is quantized.
+__________________ Bnb4BitGPT2Test.test_bnb_4bit_wrong_config __________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_bnb_4bit_wrong_config>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f9ae3220>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________ Bnb4BitGPT2Test.test_device_and_dtype_assignment _______________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_device_and_dtype_assignment>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f2306206f80>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+__________________ Bnb4BitGPT2Test.test_fp32_4bit_conversion ___________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_fp32_4bit_conversion>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f4c1c9d0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________________ Bnb4BitGPT2Test.test_generate_quality _____________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_generate_quality>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22fbe10310>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ Bnb4BitGPT2Test.test_generate_quality_config _________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_generate_quality_config>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f6e80730>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________ Bnb4BitGPT2Test.test_generate_quality_dequantize _______________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_generate_quality_dequantize>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f9ba9cf0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________________ Bnb4BitGPT2Test.test_linear_are_4bit _____________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_linear_are_4bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f6ee3f40>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________________ Bnb4BitGPT2Test.test_memory_footprint _____________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_memory_footprint>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f9bc7190>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________________ Bnb4BitGPT2Test.test_original_dtype ______________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_original_dtype>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f6eca110>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________ Bnb4BitGPT2Test.test_quantization_config_json_serialization __________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_quantization_config_json_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f22f70dc190>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________ Bnb4BitGPT2Test.test_quantization_num_parameters _______________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_quantization_num_parameters>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f23063b9ea0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________________ Bnb4BitGPT2Test.test_rwkv_4bit ________________________
+
+self = <bnb.test_4bit.Bnb4BitGPT2Test testMethod=test_rwkv_4bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_4bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True, device_map="auto")
+
+tests/quantization/bnb/test_4bit.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:3891: in from_pretrained
+    hf_quantizer.validate_environment(device_map=device_map)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <transformers.quantizers.quantizer_bnb_4bit.Bnb4BitHfQuantizer object at 0x7f2305f4e2f0>
+args = (), kwargs = {'device_map': OrderedDict([('', 'cpu')])}
+bnb = <module 'bitsandbytes' from '/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/__init__.py'>
+bnb_is_multibackend_enabled = False, device_map_without_lm_head = {'': 'cpu'}
+
+    def validate_environment(self, *args, **kwargs):
+        if not is_accelerate_available():
+            raise ImportError(
+                f"Using `bitsandbytes` 4-bit quantization requires Accelerate: `pip install 'accelerate>={ACCELERATE_MIN_VERSION}'`"
+            )
+        if not is_bitsandbytes_available():
+            raise ImportError(
+                "Using `bitsandbytes` 4-bit quantization requires the latest version of bitsandbytes: `pip install -U bitsandbytes`"
+            )
+        import bitsandbytes as bnb
+    
+        bnb_is_multibackend_enabled = "multi_backend" in getattr(bnb, "features", set())
+    
+        if not torch.cuda.is_available():
+            import bitsandbytes as bnb
+    
+            # if not bnb_is_multibackend_enabled:
+            #     raise RuntimeError(
+            #         "Current bitsandbytes (`main`) only supports CUDA, please switch to the `multi-backend-refactor` preview release for WIP support of other backends."
+            #     )
+    
+        if kwargs.get("from_tf", False) or kwargs.get("from_flax", False):
+            raise ValueError(
+                "Converting into 4-bit or 8-bit weights from tf/flax weights is currently not supported, please make"
+                " sure the weights are in PyTorch format."
+            )
+    
+        device_map = kwargs.get("device_map", None)
+        if (
+            device_map is not None
+            and isinstance(device_map, dict)
+            and not self.quantization_config.llm_int8_enable_fp32_cpu_offload
+        ):
+            device_map_without_lm_head = {
+                key: device_map[key] for key in device_map.keys() if key not in self.modules_to_not_convert
+            }
+            if set(device_map.values()) == {"cpu"} and bnb_is_multibackend_enabled:
+                pass
+            elif "cpu" in device_map_without_lm_head.values() or "disk" in device_map_without_lm_head.values():
+>               raise ValueError(
+                    "Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the "
+                    "quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules "
+                    "in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to "
+                    "`from_pretrained`. Check "
+                    "https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu "
+                    "for more details. "
+                )
+E               ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+
+src/transformers/quantizers/quantizer_bnb_4bit.py:106: ValueError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________ ExtendedSerializationTest.test_fp4_single_safe ________________
+
+self = <bnb.test_4bit.ExtendedSerializationTest testMethod=test_fp4_single_safe>
+
+    def test_fp4_single_safe(self):
+>       self.test_serialization(quant_type="fp4", double_quant=False, safe_serialization=True)
+
+tests/quantization/bnb/test_4bit.py:671: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+tests/quantization/bnb/test_4bit.py:638: in test_serialization
+    output_sequences_0 = model_0.generate(**encoded_input, max_new_tokens=10)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/utils/_contextlib.py:115: in decorate_context
+    return func(*args, **kwargs)
+src/transformers/generation/utils.py:2024: in generate
+    result = self._sample(
+src/transformers/generation/utils.py:2982: in _sample
+    outputs = self(**model_inputs, return_dict=True)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:1011: in forward
+    outputs = self.model.decoder(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:777: in forward
+    layer_outputs = decoder_layer(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:418: in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:140: in forward
+    query_states = self.q_proj(hidden_states) * self.scaling
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/nn/modules.py:478: in forward
+    out = bnb.matmul_4bit(x, self.weight.t(), bias=bias, quant_state=self.weight.quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:586: in matmul_4bit
+    out = F.gemv_4bit(A, B.t(), out, state=quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/functional.py:1506: in gemv_4bit
+    return backends[A.device.type].gemv_4bit(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu.py:171: in gemv_4bit
+    return gemm_4bit_impl(A, B, out, transposed_A, transposed_B, state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+A = tensor([[[-5.9570e-02, -1.6641e+00,  3.4180e-01,  ..., -2.7734e-01,
+           2.1680e-01, -2.2461e-01],
+         [ 1....[-2.6562e-01,  4.0625e-01, -3.8086e-01,  ..., -1.3867e-01,
+           7.9102e-02, -3.3984e-01]]], dtype=torch.bfloat16)
+B = tensor([ 39, 234, 190,  ..., 167, 205,  30], dtype=torch.uint8), out = None
+transposed_A = False, transposed_B = False
+state = <bitsandbytes.utils.QuantState object at 0x7f22f9aa0760>
+
+    def gemm_4bit_impl(
+        A: torch.Tensor,
+        B: torch.Tensor,
+        out: Optional[torch.Tensor] = None,
+        transposed_A=False,
+        transposed_B=False,
+        state: QuantState = None,
+    ) -> torch.Tensor:
+        """
+        Matrix-matrix multiplication with 4-bit quantization.
+    
+        Parameters
+        ----------
+        A : torch.Tensor
+            The first input tensor. Usually the activation tensor.
+        B : torch.Tensor
+            The second input tensor. Usually the weight tensor.
+        out : torch.Tensor
+            The output tensor.
+        transposed_A : bool
+            Whether A is transposed
+        transposed_B : bool
+            Whether B is transposed
+        state : QuantState
+            Contains quantization info, such as blocksize and dtype
+    
+        Returns
+        -------
+        torch.Tensor:
+            GEMM output tensor.
+        """
+        if ipex_cpu and _ipex_cpu_version_prereq(2, 3) and hasattr(state, "op_context"):
+            assert state.op_context is not None
+            output = torch.ops.torch_ipex.ipex_woq_linear(A, state.op_context.get_data_handle())
+        # TODO: Support XPU optimization path
+        else:
+            dqB = dequantize_4bit_impl(B, state, blocksize=state.blocksize)
+>           output = torch.matmul(A, dqB)
+E           RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::BFloat16 != c10::Half
+
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu_xpu_common.py:522: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
+_______________ ExtendedSerializationTest.test_fp4_single_unsafe _______________
+
+self = <bnb.test_4bit.ExtendedSerializationTest testMethod=test_fp4_single_unsafe>
+
+    def test_fp4_single_unsafe(self):
+>       self.test_serialization(quant_type="fp4", double_quant=False, safe_serialization=False)
+
+tests/quantization/bnb/test_4bit.py:668: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+tests/quantization/bnb/test_4bit.py:638: in test_serialization
+    output_sequences_0 = model_0.generate(**encoded_input, max_new_tokens=10)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/utils/_contextlib.py:115: in decorate_context
+    return func(*args, **kwargs)
+src/transformers/generation/utils.py:2024: in generate
+    result = self._sample(
+src/transformers/generation/utils.py:2982: in _sample
+    outputs = self(**model_inputs, return_dict=True)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:1011: in forward
+    outputs = self.model.decoder(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:777: in forward
+    layer_outputs = decoder_layer(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:418: in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:140: in forward
+    query_states = self.q_proj(hidden_states) * self.scaling
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/nn/modules.py:478: in forward
+    out = bnb.matmul_4bit(x, self.weight.t(), bias=bias, quant_state=self.weight.quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:586: in matmul_4bit
+    out = F.gemv_4bit(A, B.t(), out, state=quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/functional.py:1506: in gemv_4bit
+    return backends[A.device.type].gemv_4bit(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu.py:171: in gemv_4bit
+    return gemm_4bit_impl(A, B, out, transposed_A, transposed_B, state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+A = tensor([[[-5.9570e-02, -1.6641e+00,  3.4180e-01,  ..., -2.7734e-01,
+           2.1680e-01, -2.2461e-01],
+         [ 1....[-2.6562e-01,  4.0625e-01, -3.8086e-01,  ..., -1.3867e-01,
+           7.9102e-02, -3.3984e-01]]], dtype=torch.bfloat16)
+B = tensor([ 39, 234, 190,  ..., 167, 205,  30], dtype=torch.uint8), out = None
+transposed_A = False, transposed_B = False
+state = <bitsandbytes.utils.QuantState object at 0x7f22f717f0d0>
+
+    def gemm_4bit_impl(
+        A: torch.Tensor,
+        B: torch.Tensor,
+        out: Optional[torch.Tensor] = None,
+        transposed_A=False,
+        transposed_B=False,
+        state: QuantState = None,
+    ) -> torch.Tensor:
+        """
+        Matrix-matrix multiplication with 4-bit quantization.
+    
+        Parameters
+        ----------
+        A : torch.Tensor
+            The first input tensor. Usually the activation tensor.
+        B : torch.Tensor
+            The second input tensor. Usually the weight tensor.
+        out : torch.Tensor
+            The output tensor.
+        transposed_A : bool
+            Whether A is transposed
+        transposed_B : bool
+            Whether B is transposed
+        state : QuantState
+            Contains quantization info, such as blocksize and dtype
+    
+        Returns
+        -------
+        torch.Tensor:
+            GEMM output tensor.
+        """
+        if ipex_cpu and _ipex_cpu_version_prereq(2, 3) and hasattr(state, "op_context"):
+            assert state.op_context is not None
+            output = torch.ops.torch_ipex.ipex_woq_linear(A, state.op_context.get_data_handle())
+        # TODO: Support XPU optimization path
+        else:
+            dqB = dequantize_4bit_impl(B, state, blocksize=state.blocksize)
+>           output = torch.matmul(A, dqB)
+E           RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::BFloat16 != c10::Half
+
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu_xpu_common.py:522: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
+________________ ExtendedSerializationTest.test_nf4_single_safe ________________
+
+self = <bnb.test_4bit.ExtendedSerializationTest testMethod=test_nf4_single_safe>
+
+    def test_nf4_single_safe(self):
+>       self.test_serialization(quant_type="nf4", double_quant=False, safe_serialization=True)
+
+tests/quantization/bnb/test_4bit.py:660: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+tests/quantization/bnb/test_4bit.py:638: in test_serialization
+    output_sequences_0 = model_0.generate(**encoded_input, max_new_tokens=10)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/utils/_contextlib.py:115: in decorate_context
+    return func(*args, **kwargs)
+src/transformers/generation/utils.py:2024: in generate
+    result = self._sample(
+src/transformers/generation/utils.py:2982: in _sample
+    outputs = self(**model_inputs, return_dict=True)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:1011: in forward
+    outputs = self.model.decoder(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:777: in forward
+    layer_outputs = decoder_layer(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:418: in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:140: in forward
+    query_states = self.q_proj(hidden_states) * self.scaling
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/nn/modules.py:478: in forward
+    out = bnb.matmul_4bit(x, self.weight.t(), bias=bias, quant_state=self.weight.quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:586: in matmul_4bit
+    out = F.gemv_4bit(A, B.t(), out, state=quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/functional.py:1506: in gemv_4bit
+    return backends[A.device.type].gemv_4bit(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu.py:171: in gemv_4bit
+    return gemm_4bit_impl(A, B, out, transposed_A, transposed_B, state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+A = tensor([[[-5.9570e-02, -1.6641e+00,  3.4180e-01,  ..., -2.7734e-01,
+           2.1680e-01, -2.2461e-01],
+         [ 1....[-2.6562e-01,  4.0625e-01, -3.8086e-01,  ..., -1.3867e-01,
+           7.9102e-02, -3.3984e-01]]], dtype=torch.bfloat16)
+B = tensor([234,  81,   5,  ...,  26,  50, 133], dtype=torch.uint8), out = None
+transposed_A = False, transposed_B = False
+state = <bitsandbytes.utils.QuantState object at 0x7f22f96d4220>
+
+    def gemm_4bit_impl(
+        A: torch.Tensor,
+        B: torch.Tensor,
+        out: Optional[torch.Tensor] = None,
+        transposed_A=False,
+        transposed_B=False,
+        state: QuantState = None,
+    ) -> torch.Tensor:
+        """
+        Matrix-matrix multiplication with 4-bit quantization.
+    
+        Parameters
+        ----------
+        A : torch.Tensor
+            The first input tensor. Usually the activation tensor.
+        B : torch.Tensor
+            The second input tensor. Usually the weight tensor.
+        out : torch.Tensor
+            The output tensor.
+        transposed_A : bool
+            Whether A is transposed
+        transposed_B : bool
+            Whether B is transposed
+        state : QuantState
+            Contains quantization info, such as blocksize and dtype
+    
+        Returns
+        -------
+        torch.Tensor:
+            GEMM output tensor.
+        """
+        if ipex_cpu and _ipex_cpu_version_prereq(2, 3) and hasattr(state, "op_context"):
+            assert state.op_context is not None
+            output = torch.ops.torch_ipex.ipex_woq_linear(A, state.op_context.get_data_handle())
+        # TODO: Support XPU optimization path
+        else:
+            dqB = dequantize_4bit_impl(B, state, blocksize=state.blocksize)
+>           output = torch.matmul(A, dqB)
+E           RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::BFloat16 != c10::Half
+
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu_xpu_common.py:522: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
+_______________ ExtendedSerializationTest.test_nf4_single_unsafe _______________
+
+self = <bnb.test_4bit.ExtendedSerializationTest testMethod=test_nf4_single_unsafe>
+
+    def test_nf4_single_unsafe(self):
+>       self.test_serialization(quant_type="nf4", double_quant=False, safe_serialization=False)
+
+tests/quantization/bnb/test_4bit.py:657: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+src/transformers/testing_utils.py:332: in wrapper
+    return test_func(*args, **kwargs)
+tests/quantization/bnb/test_4bit.py:638: in test_serialization
+    output_sequences_0 = model_0.generate(**encoded_input, max_new_tokens=10)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/utils/_contextlib.py:115: in decorate_context
+    return func(*args, **kwargs)
+src/transformers/generation/utils.py:2024: in generate
+    result = self._sample(
+src/transformers/generation/utils.py:2982: in _sample
+    outputs = self(**model_inputs, return_dict=True)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:1011: in forward
+    outputs = self.model.decoder(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:777: in forward
+    layer_outputs = decoder_layer(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:418: in forward
+    hidden_states, self_attn_weights, present_key_value = self.self_attn(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:140: in forward
+    query_states = self.q_proj(hidden_states) * self.scaling
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1527: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/torch/nn/modules/module.py:1536: in _call_impl
+    return forward_call(*args, **kwargs)
+../../accelerate/src/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/nn/modules.py:478: in forward
+    out = bnb.matmul_4bit(x, self.weight.t(), bias=bias, quant_state=self.weight.quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:586: in matmul_4bit
+    out = F.gemv_4bit(A, B.t(), out, state=quant_state)
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/functional.py:1506: in gemv_4bit
+    return backends[A.device.type].gemv_4bit(
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu.py:171: in gemv_4bit
+    return gemm_4bit_impl(A, B, out, transposed_A, transposed_B, state)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+A = tensor([[[-5.9570e-02, -1.6641e+00,  3.4180e-01,  ..., -2.7734e-01,
+           2.1680e-01, -2.2461e-01],
+         [ 1....[-2.6562e-01,  4.0625e-01, -3.8086e-01,  ..., -1.3867e-01,
+           7.9102e-02, -3.3984e-01]]], dtype=torch.bfloat16)
+B = tensor([234,  81,   5,  ...,  26,  50, 133], dtype=torch.uint8), out = None
+transposed_A = False, transposed_B = False
+state = <bitsandbytes.utils.QuantState object at 0x7f22f47b7bb0>
+
+    def gemm_4bit_impl(
+        A: torch.Tensor,
+        B: torch.Tensor,
+        out: Optional[torch.Tensor] = None,
+        transposed_A=False,
+        transposed_B=False,
+        state: QuantState = None,
+    ) -> torch.Tensor:
+        """
+        Matrix-matrix multiplication with 4-bit quantization.
+    
+        Parameters
+        ----------
+        A : torch.Tensor
+            The first input tensor. Usually the activation tensor.
+        B : torch.Tensor
+            The second input tensor. Usually the weight tensor.
+        out : torch.Tensor
+            The output tensor.
+        transposed_A : bool
+            Whether A is transposed
+        transposed_B : bool
+            Whether B is transposed
+        state : QuantState
+            Contains quantization info, such as blocksize and dtype
+    
+        Returns
+        -------
+        torch.Tensor:
+            GEMM output tensor.
+        """
+        if ipex_cpu and _ipex_cpu_version_prereq(2, 3) and hasattr(state, "op_context"):
+            assert state.op_context is not None
+            output = torch.ops.torch_ipex.ipex_woq_linear(A, state.op_context.get_data_handle())
+        # TODO: Support XPU optimization path
+        else:
+            dqB = dequantize_4bit_impl(B, state, blocksize=state.blocksize)
+>           output = torch.matmul(A, dqB)
+E           RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::BFloat16 != c10::Half
+
+/home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu_xpu_common.py:522: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
+=============================== warnings summary ===============================
+../../../../../home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/_pytest/config/__init__.py:1448
+  /home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/_pytest/config/__init__.py:1448: PytestConfigWarning: Unknown config option: doctest_glob
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+../../../../../home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/intel_extension_for_pytorch/nn/utils/_weight_prepack.py:5
+  /home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/intel_extension_for_pytorch/nn/utils/_weight_prepack.py:5: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
+
+tests/quantization/bnb/test_4bit.py: 23 warnings
+  /workspace1/fanli/local-workspace/tmp/transformers/src/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+    warnings.warn(
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_double_safe
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_double_unsafe
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_single_safe
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_single_unsafe
+  /home/fanli/miniforge3/envs/ipex-ww28/lib/python3.10/site-packages/bitsandbytes/backends/cpu_xpu_common.py:309: UserWarning: fp4 quantization is currently slow on CPU/XPU. Please Use nf4 instead for better performance.
+    warnings.warn("fp4 quantization is currently slow on CPU/XPU. Please Use nf4 instead for better performance.")
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_single_safe
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_single_safe
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_single_safe
+  <frozen importlib._bootstrap>:283: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.12; use exec_module() instead
+
+tests/quantization/bnb/test_4bit.py: 12 warnings
+  /workspace1/fanli/local-workspace/accelerate/src/accelerate/utils/modeling.py:1405: UserWarning: Current model requires 6291552.0 bytes of buffer for offloaded layers, which seems does not fit any GPU's remaining memory. If you are experiencing a OOM later, please consider using offload_buffers=True.
+    warnings.warn(
+
+tests/quantization/bnb/test_4bit.py: 12 warnings
+  /workspace1/fanli/local-workspace/accelerate/src/accelerate/utils/modeling.py:1405: UserWarning: Current model requires 6291480.0 bytes of buffer for offloaded layers, which seems does not fit any GPU's remaining memory. If you are experiencing a OOM later, please consider using offload_buffers=True.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] tests/quantization/bnb/test_4bit.py:487: test requires multiple GPUs
+SKIPPED [4] tests/quantization/bnb/test_4bit.py:571: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
+SKIPPED [1] tests/quantization/bnb/test_4bit.py:676: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
+SKIPPED [1] tests/quantization/bnb/test_4bit.py:673: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
+SKIPPED [1] tests/quantization/bnb/test_4bit.py:662: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
+=== 33 failed, 2 passed, 8 skipped, 59 warnings, 1 error in 82.54s (0:01:22) ===

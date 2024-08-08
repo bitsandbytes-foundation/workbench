@@ -1,0 +1,38 @@
+4-bit Test Error Summary:
+     28 ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+      4 RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::BFloat16 != c10::Half
+      2 Traceback (most recent call last):
+      2 raise ValueError(
+      2 model = model_class.from_pretrained(model, **kwargs)
+      2 hf_quantizer.validate_environment(device_map=device_map)
+      2 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/quantizers/quantizer_bnb_4bit.py", line 106, in validate_environment
+      2 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/pipelines/base.py", line 286, in infer_framework_load_model
+      2 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/modeling_utils.py", line 3891, in from_pretrained
+      2 
+      1 while loading with BloomForCausalLM, an error is thrown:
+      1 while loading with AutoModelForCausalLM, an error is thrown:
+      1 ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details. 
+      1 ValueError: Could not load model bigscience/bloom-1b7 with any of the following classes: (<class 'transformers.models.auto.modeling_auto.AutoModelForCausalLM'>, <class 'transformers.models.bloom.modeling_bloom.BloomForCausalLM'>). See the original errors:
+      1 return model_class.from_pretrained(
+      1 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+      1 AttributeError: pipe
+      1 AttributeError: 'OPTForCausalLM' object has no attribute 'hf_device_map'
+
+8-bit Test Error Summary:
+     25 ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details.
+     15 AssertionError: Torch not compiled with CUDA enabled
+      2 Traceback (most recent call last):
+      2 raise ValueError(
+      2 model = model_class.from_pretrained(model, **kwargs)
+      2 hf_quantizer.validate_environment(device_map=device_map)
+      2 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/quantizers/quantizer_bnb_8bit.py", line 106, in validate_environment
+      2 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/pipelines/base.py", line 286, in infer_framework_load_model
+      2 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/modeling_utils.py", line 3891, in from_pretrained
+      2 
+      1 while loading with BloomForCausalLM, an error is thrown:
+      1 while loading with AutoModelForCausalLM, an error is thrown:
+      1 ValueError: Some modules are dispatched on the CPU or the disk. Make sure you have enough GPU RAM to fit the quantized model. If you want to dispatch the model on the CPU or the disk while keeping these modules in 32-bit, you need to set `load_in_8bit_fp32_cpu_offload=True` and pass a custom `device_map` to `from_pretrained`. Check https://huggingface.co/docs/transformers/main/en/main_classes/quantization#offload-between-cpu-and-gpu for more details. 
+      1 ValueError: Could not load model bigscience/bloom-1b7 with any of the following classes: (<class 'transformers.models.auto.modeling_auto.AutoModelForCausalLM'>, <class 'transformers.models.bloom.modeling_bloom.BloomForCausalLM'>). See the original errors:
+      1 return model_class.from_pretrained(
+      1 File "/workspace1/fanli/local-workspace/tmp/transformers/src/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+      1 AttributeError: pipe
