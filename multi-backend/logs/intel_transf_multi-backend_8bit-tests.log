@@ -3,9 +3,53 @@ platform linux -- Python 3.8.19, pytest-8.2.2, pluggy-1.5.0 -- /home/sdp/.condax
 cachedir: .pytest_cache
 rootdir: /home/sdp/src/transformers
 configfile: pyproject.toml
-collecting ... collected 1 item
+collecting ... collected 45 items
 
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training FAILED [100%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_device_and_dtype_assignment PASSED [  2%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_fp32_int8_conversion PASSED [  4%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality PASSED [  6%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_config PASSED [  8%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_dequantize PASSED [ 11%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert PASSED [ 13%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code PASSED [ 15%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_from_pretrained PASSED [ 17%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization PASSED [ 20%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_regression PASSED [ 22%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_sharded PASSED [ 24%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_linear_are_8bit PASSED [ 26%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_llm_skip PASSED [ 28%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_memory_footprint PASSED [ 31%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_original_dtype PASSED [ 33%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_quantization_config_json_serialization PASSED [ 35%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_raise_if_config_and_load_in_8bit PASSED [ 37%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32 PASSED [ 40%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized PASSED [ 42%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32 PASSED [ 44%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8ModelClassesTest::test_correct_head_class PASSED [ 46%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestPipeline::test_pipeline PASSED [ 48%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestMultiGpu::test_multi_gpu_loading SKIPPED [ 51%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map SKIPPED [ 53%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map_kwargs SKIPPED [ 55%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map SKIPPED [ 57%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_random_device_map SKIPPED [ 60%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training FAILED [ 62%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_device_and_dtype_assignment PASSED [ 64%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_fp32_int8_conversion PASSED [ 66%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality PASSED [ 68%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_config PASSED [ 71%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_dequantize PASSED [ 73%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert PASSED [ 75%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code PASSED [ 77%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_from_pretrained PASSED [ 80%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization PASSED [ 82%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_regression PASSED [ 84%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_sharded PASSED [ 86%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_linear_are_8bit PASSED [ 88%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_llm_skip PASSED [ 91%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_memory_footprint PASSED [ 93%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_original_dtype PASSED [ 95%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_quantization_config_json_serialization PASSED [ 97%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_raise_if_config_and_load_in_8bit PASSED [100%]
 
 =================================== FAILURES ===================================
 _____________________ MixedInt8TestTraining.test_training ______________________
@@ -38,80 +82,227 @@ self = <bnb.test_mixed_int8.MixedInt8TestTraining testMethod=test_training>
                 module.v_proj = LoRALayer(module.v_proj, rank=16)
     
         # Step 3: dummy batch
-        batch = self.tokenizer("Test batch ", return_tensors="pt").to(device)
+        batch = self.tokenizer("Test batch ", return_tensors="pt").to(torch_device)
     
         # Step 4: Check if the gradient is not None
-        with torch.cuda.amp.autocast():
+        with torch.autocast(torch_device):
 >           out = model.forward(**batch)
 
-tests/quantization/bnb/test_mixed_int8.py:881: 
+tests/quantization/bnb/test_mixed_int8.py:885: 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
 src/transformers/models/opt/modeling_opt.py:1011: in forward
     outputs = self.model.decoder(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
     return forward_call(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
 src/transformers/models/opt/modeling_opt.py:777: in forward
     layer_outputs = decoder_layer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
     return forward_call(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
 src/transformers/models/opt/modeling_opt.py:418: in forward
     hidden_states, self_attn_weights, present_key_value = self.self_attn(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
     return forward_call(*args, **kwargs)
-src/transformers/models/opt/modeling_opt.py:140: in forward
-    query_states = self.q_proj(hidden_states) * self.scaling
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+src/transformers/models/opt/modeling_opt.py:238: in forward
+    attn_output = self.out_proj(attn_output)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
     return forward_call(*args, **kwargs)
-tests/quantization/bnb/test_mixed_int8.py:79: in forward
-    return self.module(input, *args, **kwargs) + self.adapter(input)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/container.py:217: in forward
-    input = module(input)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
+    output = module._old_forward(*args, **kwargs)
+../bnb/bitsandbytes/nn/modules.py:838: in forward
+    out = bnb.matmul(x, self.weight, bias=self.bias, state=self.state)
+../bnb/bitsandbytes/autograd/_functions.py:567: in matmul
+    return MatMul8bitLt.apply(A, B, out, bias, state)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/autograd/function.py:598: in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+../bnb/bitsandbytes/autograd/_functions.py:332: in forward
+    CA, CAt, SCA, SCAt, coo_tensorA = F.double_quant(A.to(A_dtype), threshold=state.threshold)
+../bnb/bitsandbytes/functional.py:1883: in double_quant
+    return backends[A.device.type].double_quant(
+../bnb/bitsandbytes/backends/cpu.py:48: in double_quant
+    return double_quant_impl(A, col_stats, row_stats, out_col, out_row, threshold)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/eval_frame.py:451: in _fn
+    return fn(*args, **kwargs)
+../bnb/bitsandbytes/backends/cpu_xpu_common.py:112: in double_quant_impl
+    outlier_coord = outlier_indices.nonzero()  # get outlier coordinates
+../bnb/bitsandbytes/backends/cpu_xpu_common.py:121: in torch_dynamo_resume_in_double_quant_impl_at_112
+    row_stats, col_stats = get_row_col_stats(A)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:921: in catch_errors
+    return callback(frame, cache_entry, hooks, frame_state, skip=1)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:786: in _convert_frame
+    result = inner_convert(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:400: in _convert_frame_assert
+    return _compile(
+../../.condax/mamba/envs/bnb/lib/python3.8/contextlib.py:75: in inner
+    return func(*args, **kwds)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:703: in _compile
+    raise InternalTorchDynamoError(str(e)).with_traceback(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:676: in _compile
+    guarded_code = compile_inner(code, one_graph, hooks, transform)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/utils.py:262: in time_wrapper
+    r = func(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:535: in compile_inner
+    out_code = transform_code_object(code, transform)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/bytecode_transformation.py:1036: in transform_code_object
+    transformations(instructions, code_options)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:165: in _fn
+    return fn(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/convert_frame.py:500: in transform
+    tracer.run()
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py:2149: in run
+    super().run()
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py:810: in run
+    and self.step()
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py:773: in step
+    getattr(self, inst.opname)(inst)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py:489: in wrapper
+    return inner_fn(self, inst)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py:1219: in CALL_FUNCTION
+    self.call_function(fn, args, {})
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/symbolic_convert.py:674: in call_function
+    self.push(fn.call_function(self, args, kwargs))
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/torch.py:293: in call_function
+    constant_args = check_constant_args(args, kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/utils.py:1013: in check_constant_args
+    return all(x.is_python_constant() for x in itertools.chain(args, kwargs.values()))
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/utils.py:1013: in <genexpr>
+    return all(x.is_python_constant() for x in itertools.chain(args, kwargs.values()))
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/lazy.py:94: in realize_and_forward
+    return getattr(self.realize(), name)(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/lazy.py:58: in realize
+    self._cache.realize(self.parents_tracker)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/lazy.py:24: in realize
+    self.vt = VariableBuilder(tx, self.source)(self.value)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/builder.py:269: in __call__
+    vt = self._wrap(value)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/builder.py:402: in _wrap
+    return type_dispatch(self, value)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/builder.py:1073: in wrap_tensor
+    tensor_variable = wrap_fx_proxy(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/builder.py:1330: in wrap_fx_proxy
+    return wrap_fx_proxy_cls(target_cls=TensorVariable, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/builder.py:1440: in wrap_fx_proxy_cls
+    example_value = wrap_to_fake_tensor_and_record(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/builder.py:1880: in wrap_to_fake_tensor_and_record
+    fake_e = wrap_fake_exception(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/utils.py:1190: in wrap_fake_exception
+    return fn()
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_dynamo/variables/builder.py:1881: in <lambda>
+    lambda: tx.fake_mode.from_tensor(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_subclasses/fake_tensor.py:1666: in from_tensor
+    return self.fake_tensor_converter(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_subclasses/fake_tensor.py:349: in __call__
+    return self.from_real_tensor(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_subclasses/fake_tensor.py:306: in from_real_tensor
+    out = self.meta_converter(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_subclasses/meta_utils.py:967: in __call__
+    r = self.meta_tensor(
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_subclasses/meta_utils.py:884: in meta_tensor
+    assert_metadata_eq(assert_eq, t, r, skip_symbolic=True)
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_subclasses/meta_utils.py:86: in assert_metadata_eq
+    return go(m1, m2)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = Linear(in_features=1024, out_features=16, bias=False)
-input = tensor([[[ 0.0001, -0.0733, -0.0286,  ...,  0.0008,  0.0229, -0.0093],
-         [-0.0197,  0.0712,  0.0296,  ..., -0.0...-0.0445,  0.0259],
-         [-0.0383,  0.0467,  0.0092,  ..., -0.0256,  0.0060, -0.0399]]],
-       dtype=torch.float16)
+m1 = tensor([[ 0.1582, -0.1504,  0.2031,  ..., -0.0996, -0.0918, -0.2227],
+        [ 0.1406, -0.1406,  0.2090,  ..., -0.101...
+        [ 0.1455, -0.1455,  0.2051,  ..., -0.1152, -0.1177, -0.2256]],
+       dtype=torch.bfloat16, grad_fn=<Invalid>)
+m2 = FakeTensor(..., size=(s2, s3), dtype=torch.bfloat16,
+           grad_fn=<AsStridedBackward0>)
 
-    def forward(self, input: Tensor) -> Tensor:
->       return F.linear(input, self.weight, self.bias)
-E       RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::Half != float
+    def go(m1, m2):
+        assert_eq(m1.dtype, m2.dtype)
+        if not skip_symbolic:
+            assert_eq(m1.shape, m2.shape)
+        assert_eq(m1.requires_grad, m2.requires_grad)
+>       assert_eq(m1.is_leaf, m2.is_leaf)
+E       torch._dynamo.exc.InternalTorchDynamoError: A view was created in no_grad mode and its base or another view of its base has been modified inplace with grad mode enabled. Given that this use case is ambiguous and error-prone, it is forbidden. You can clarify your code by moving both the view and the inplace either both inside the no_grad block (if you don't want the inplace to be tracked) or both outside (if you want the inplace to be tracked).
+E       
+E       from user code:
+E          File "/home/sdp/src/bnb/bitsandbytes/backends/cpu_xpu_common.py", line 100, in get_row_col_stats
+E           row_stats = torch.max(torch.abs(A), 1).values  # absolute max of each row
+E       
+E       Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+E       
+E       
+E       You can suppress this exception and fall back to eager by setting:
+E           import torch._dynamo
+E           torch._dynamo.config.suppress_errors = True
 
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/linear.py:116: RuntimeError
+../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/_subclasses/meta_utils.py:62: InternalTorchDynamoError
 ----------------------------- Captured stderr call -----------------------------
 The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
 `low_cpu_mem_usage` was None, now set to True since model is quantized.
+W0818 20:48:14.431504 140600196925248 torch/_dynamo/convert_frame.py:357] torch._dynamo hit config.cache_size_limit (8)
+W0818 20:48:14.431504 140600196925248 torch/_dynamo/convert_frame.py:357]    function: 'torch_dynamo_resume_in_double_quant_impl_at_112' (/home/sdp/src/bnb/bitsandbytes/backends/cpu_xpu_common.py:112)
+W0818 20:48:14.431504 140600196925248 torch/_dynamo/convert_frame.py:357]    last reason: tensor 'L['A']' dispatch key set mismatch. expected DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU), actual DispatchKeySet(CPU, BackendSelect, ADInplaceOrView, AutogradCPU, AutocastCPU)
+W0818 20:48:14.431504 140600196925248 torch/_dynamo/convert_frame.py:357] To log all recompilation reasons, use TORCH_LOGS="recompiles".
+W0818 20:48:14.431504 140600196925248 torch/_dynamo/convert_frame.py:357] To diagnose recompilation issues, see https://pytorch.org/docs/master/compile/troubleshooting.html.
+------------------------------ Captured log call -------------------------------
+WARNING  accelerate.big_modeling:big_modeling.py:435 Some parameters are on the meta device device because they were offloaded to the cpu.
 =============================== warnings summary ===============================
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/_pytest/config/__init__.py:1448
   /home/sdp/.condax/mamba/envs/bnb/lib/python3.8/site-packages/_pytest/config/__init__.py:1448: PytestConfigWarning: Unknown config option: doctest_glob
   
     self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
 
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
-  /home/sdp/.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+tests/quantization/bnb/test_mixed_int8.py: 26 warnings
+  /home/sdp/src/bnb/bitsandbytes/autograd/_functions.py:327: UserWarning: MatMul8bitLt: inputs will be cast from torch.float16 to torch.bfloat16 during quantization
+    warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to {A_dtype} during quantization")
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
+  /home/sdp/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:90: DeprecationWarning: verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.
+    warnings.warn(DeprecationWarning('verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.'))
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
+  /home/sdp/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:97: UserWarning: alibi is turned on, setting `learned_pos_emb` to `False.`
+    warnings.warn(f'alibi is turned on, setting `learned_pos_emb` to `False.`')
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_regression
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_regression
+  /home/sdp/src/transformers/src/transformers/quantizers/auto.py:174: UserWarning: You passed `quantization_config` or equivalent parameters to `from_pretrained` but the model you're loading already has a `quantization_config` attribute. The `quantization_config` from the model will be used.
+    warnings.warn(warning_msg)
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32
+  /home/sdp/src/transformers/src/transformers/generation/utils.py:1258: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+    warnings.warn(
+
+tests/quantization/bnb/test_mixed_int8.py: 18 warnings
+  /home/sdp/src/transformers/src/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
     warnings.warn(
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
-  /home/sdp/src/bnb/bitsandbytes/autograd/_functions.py:327: UserWarning: MatMul8bitLt: inputs will be cast from torch.float16 to torch.bfloat16 during quantization
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
+  /home/sdp/src/bnb/bitsandbytes/autograd/_functions.py:327: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to torch.bfloat16 during quantization
     warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to {A_dtype} during quantization")
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-======================== 1 failed, 4 warnings in 15.06s ========================
+=========================== short test summary info ============================
+SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:679: test requires multiple GPUs
+SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:794: test requires multiple GPUs
+SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:821: test requires multiple GPUs
+SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:767: test requires multiple GPUs
+SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:719: test requires multiple GPUs
+====== 1 failed, 39 passed, 5 skipped, 59 warnings in 1572.99s (0:26:12) =======

@@ -5,99 +5,8 @@ rootdir: /home/sdp/src/transformers
 configfile: pyproject.toml
 collecting ... collected 1 item
 
-tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training FAILED [100%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training PASSED [100%]
 
-=================================== FAILURES ===================================
-______________________ Bnb4BitTestTraining.test_training _______________________
-
-self = <bnb.test_4bit.Bnb4BitTestTraining testMethod=test_training>
-
-    def test_training(self):
-        if version.parse(importlib.metadata.version("bitsandbytes")) < version.parse("0.37.0"):
-            self.skipTest(reason="This test requires bitsandbytes >= 0.37.0")
-    
-        # Step 1: freeze all parameters
-        model = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_4bit=True)
-    
-        if torch.cuda.is_available():
-            self.assertEqual(set(model.hf_device_map.values()), {torch.cuda.current_device()})
-        else:
-            self.assertTrue(all(param.device.type == "cpu" for param in model.parameters()))
-    
-        for param in model.parameters():
-            param.requires_grad = False  # freeze the model - train adapters later
-            if param.ndim == 1:
-                # cast the small parameters (e.g. layernorm) to fp32 for stability
-                param.data = param.data.to(torch.float32)
-    
-        # Step 2: add adapters
-        for _, module in model.named_modules():
-            if "OPTAttention" in repr(type(module)):
-                module.q_proj = LoRALayer(module.q_proj, rank=16)
-                module.k_proj = LoRALayer(module.k_proj, rank=16)
-                module.v_proj = LoRALayer(module.v_proj, rank=16)
-    
-        # Step 3: dummy batch
-        batch = self.tokenizer("Test batch ", return_tensors="pt").to(device)
-    
-        # Step 4: Check if the gradient is not None
-        with torch.cuda.amp.autocast():
->           out = model.forward(**batch)
-
-tests/quantization/bnb/test_4bit.py:546: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-src/transformers/models/opt/modeling_opt.py:1011: in forward
-    outputs = self.model.decoder(
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
-src/transformers/models/opt/modeling_opt.py:777: in forward
-    layer_outputs = decoder_layer(
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
-src/transformers/models/opt/modeling_opt.py:418: in forward
-    hidden_states, self_attn_weights, present_key_value = self.self_attn(
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
-src/transformers/models/opt/modeling_opt.py:140: in forward
-    query_states = self.q_proj(hidden_states) * self.scaling
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
-tests/quantization/bnb/test_4bit.py:79: in forward
-    return self.module(input, *args, **kwargs) + self.adapter(input)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/container.py:217: in forward
-    input = module(input)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1532: in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1541: in _call_impl
-    return forward_call(*args, **kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = Linear(in_features=1024, out_features=16, bias=False)
-input = tensor([[[ 0.0041, -0.0679, -0.0397,  ...,  0.0058,  0.0221, -0.0017],
-         [-0.0280,  0.0693,  0.0341,  ..., -0.0...-0.0358,  0.0205],
-         [-0.0345,  0.0459,  0.0049,  ..., -0.0307,  0.0067, -0.0451]]],
-       dtype=torch.float16)
-
-    def forward(self, input: Tensor) -> Tensor:
->       return F.linear(input, self.weight, self.bias)
-E       RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::Half != float
-
-../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/linear.py:116: RuntimeError
------------------------------ Captured stderr call -----------------------------
-The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
-`low_cpu_mem_usage` was None, now set to True since model is quantized.
 =============================== warnings summary ===============================
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/_pytest/config/__init__.py:1448
   /home/sdp/.condax/mamba/envs/bnb/lib/python3.8/site-packages/_pytest/config/__init__.py:1448: PytestConfigWarning: Unknown config option: doctest_glob
@@ -105,17 +14,17 @@ The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be remov
     self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
+  /home/sdp/src/transformers/src/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+    warnings.warn(
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
 tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
   /home/sdp/src/bnb/bitsandbytes/backends/cpu_xpu_common.py:317: UserWarning: fp4 quantization is currently slow on CPU/XPU. Please Use nf4 instead for better performance.
     warnings.warn("fp4 quantization is currently slow on CPU/XPU. Please Use nf4 instead for better performance.")
-
-tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
-  /home/sdp/.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
-    warnings.warn(
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
   /home/sdp/src/bnb/bitsandbytes/nn/modules.py:437: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
     warnings.warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-======================== 1 failed, 5 warnings in 10.92s ========================
+======================== 1 passed, 5 warnings in 39.51s ========================

@@ -1,5 +1,13 @@
 4-bit Test Error Summary:
-      1 RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::Half != float
+No errors found in 4-bit tests.
 
 8-bit Test Error Summary:
-      1 RuntimeError: expected m1 and m2 to have the same dtype, but got: c10::Half != float
+      4 
+      1 torch._dynamo.exc.InternalTorchDynamoError: A view was created in no_grad mode and its base or another view of its base has been modified inplace with grad mode enabled. Given that this use case is ambiguous and error-prone, it is forbidden. You can clarify your code by moving both the view and the inplace either both inside the no_grad block (if you don't want the inplace to be tracked) or both outside (if you want the inplace to be tracked).
+      1 torch._dynamo.config.suppress_errors = True
+      1 row_stats = torch.max(torch.abs(A), 1).values  # absolute max of each row
+      1 import torch._dynamo
+      1 from user code:
+      1 You can suppress this exception and fall back to eager by setting:
+      1 Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+      1 File "/home/sdp/src/bnb/bitsandbytes/backends/cpu_xpu_common.py", line 101, in get_row_col_stats
