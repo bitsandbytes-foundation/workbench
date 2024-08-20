@@ -19,6 +19,7 @@ get_cpu_type() {
 
 MACHINE_TYPE=$(get_cpu_type)
 # MACHINE_TYPE=cuda
+# MACHINE_TYPE=intel_xpu
 
 if [ "$MACHINE_TYPE" == "cuda" ]; then
     export CUDA_VISIBLE_DEVICES=0,1
@@ -41,6 +42,8 @@ mkdir -p "$LOG_DIR"
 cd "$SCRIPT_DIR/../../transformers"
 
 export RUN_SLOW=1
+# export ONEAPI_DEVICE_SELECTOR="level_zero:0,1"
+# export TRANSFORMERS_TEST_DEVICE="xpu"
 
 PYTEST_ARGS='-rsx -v'
 
