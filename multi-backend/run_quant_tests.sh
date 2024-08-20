@@ -18,6 +18,11 @@ get_cpu_type() {
 }
 
 MACHINE_TYPE=$(get_cpu_type)
+# MACHINE_TYPE=cuda
+
+if [ "$MACHINE_TYPE" == "cuda" ]; then
+    export CUDA_VISIBLE_DEVICES=0,1
+fi
 
 if [ "$MACHINE_TYPE" == "unknown" ]; then
     echo "Error: Could not determine CPU type. Please run on an Intel or AMD machine."
@@ -26,9 +31,10 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_DIR="$SCRIPT_DIR/logs"
-FOURBIT_LOG="$LOG_DIR/${MACHINE_TYPE}_transf_multi-backend_4bit-tests.log"
-EIGHTBIT_LOG="$LOG_DIR/${MACHINE_TYPE}_transf_multi-backend_8bit-tests.log"
-SUMMARY_LOG="$LOG_DIR/${MACHINE_TYPE}_summary.log"
+BRANCH_DESCRIPTOR="bnb_mbr_transf_PR31098_multi"
+FOURBIT_LOG="$LOG_DIR/${MACHINE_TYPE}_${BRANCH_DESCRIPTOR}-backend_4bit-tests.log"
+EIGHTBIT_LOG="$LOG_DIR/${MACHINE_TYPE}_${BRANCH_DESCRIPTOR}-backend_8bit-tests.log"
+SUMMARY_LOG="$LOG_DIR/${MACHINE_TYPE}_${BRANCH_DESCRIPTOR}_summary.log"
 
 mkdir -p "$LOG_DIR"
 
@@ -36,14 +42,16 @@ cd "$SCRIPT_DIR/../../transformers"
 
 export RUN_SLOW=1
 
+PYTEST_ARGS='-rsx -v'
+
 # Run 4-bit tests and log output, ensuring the script continues even if tests fail
-( pytest tests/quantization/bnb/test_4bit.py -rsx -v 2>&1 || true ) | tee "$FOURBIT_LOG"
+( pytest tests/quantization/bnb/test_4bit.py $PYTEST_ARGS 2>&1 || true ) | tee "$FOURBIT_LOG"
 
 echo "4-bit Test Error Summary:" > "$SUMMARY_LOG"
 { rg -o 'E\s\s+(.*)' "$FOURBIT_LOG" -r '$1' | sort | uniq -c | sort -rn || echo "No errors found in 4-bit tests."; } >> "$SUMMARY_LOG"
 
 # Run 8-bit tests and log output, ensuring the script continues even if tests fail
-( pytest tests/quantization/bnb/test_mixed_int8.py -rsx -v 2>&1 || true ) | tee "$EIGHTBIT_LOG"
+( pytest tests/quantization/bnb/test_mixed_int8.py $PYTEST_ARGS -rsx -v 2>&1 || true ) | tee "$EIGHTBIT_LOG"
 
 echo -e "\n8-bit Test Error Summary:" >> "$SUMMARY_LOG"
 { rg -o 'E\s\s+(.*)' "$EIGHTBIT_LOG" -r '$1' | sort | uniq -c | sort -rn || echo "No errors found in 8-bit tests."; } >> "$SUMMARY_LOG"
