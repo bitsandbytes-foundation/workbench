@@ -18,11 +18,14 @@ get_cpu_type() {
 }
 
 MACHINE_TYPE=$(get_cpu_type)
-# MACHINE_TYPE=cuda
 # MACHINE_TYPE=intel_xpu
 
-if [ "$MACHINE_TYPE" == "cuda" ]; then
+if command -v nvidia-smi &> /dev/null; then
+    MACHINE_TYPE=cuda
     export CUDA_VISIBLE_DEVICES=0,1
+elif command -v rocm-smi &> /dev/null; then
+    MACHINE_TYPE=rocm
+    export HIP_VISIBLE_DEVICES=0,1
 fi
 
 if [ "$MACHINE_TYPE" == "unknown" ]; then
