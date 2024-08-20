@@ -1,0 +1,95 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.19, pytest-8.3.2, pluggy-1.5.0 -- /home/ubuntu/.condax/mamba/envs/bnb/bin/python3.8
+cachedir: .pytest_cache
+rootdir: /home/ubuntu/src/transformers
+configfile: pyproject.toml
+collecting ... collected 45 items
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_device_and_dtype_assignment PASSED [  2%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_fp32_int8_conversion PASSED [  4%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality PASSED [  6%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_config PASSED [  8%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_dequantize PASSED [ 11%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert PASSED [ 13%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code PASSED [ 15%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_from_pretrained PASSED [ 17%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization PASSED [ 20%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_regression PASSED [ 22%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_sharded PASSED [ 24%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_linear_are_8bit PASSED [ 26%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_llm_skip PASSED [ 28%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_memory_footprint PASSED [ 31%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_original_dtype PASSED [ 33%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_quantization_config_json_serialization PASSED [ 35%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_raise_if_config_and_load_in_8bit PASSED [ 37%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32 PASSED [ 40%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized PASSED [ 42%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32 PASSED [ 44%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8ModelClassesTest::test_correct_head_class PASSED [ 46%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestPipeline::test_pipeline PASSED [ 48%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestMultiGpu::test_multi_gpu_loading PASSED [ 51%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map PASSED [ 53%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map_kwargs PASSED [ 55%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map PASSED [ 57%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_random_device_map PASSED [ 60%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training PASSED [ 62%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_device_and_dtype_assignment PASSED [ 64%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_fp32_int8_conversion PASSED [ 66%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality PASSED [ 68%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_config PASSED [ 71%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_dequantize PASSED [ 73%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert PASSED [ 75%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code PASSED [ 77%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_from_pretrained PASSED [ 80%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization PASSED [ 82%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_regression PASSED [ 84%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_sharded PASSED [ 86%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_linear_are_8bit PASSED [ 88%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_llm_skip PASSED [ 91%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_memory_footprint PASSED [ 93%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_original_dtype PASSED [ 95%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_quantization_config_json_serialization PASSED [ 97%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_raise_if_config_and_load_in_8bit PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
+  /home/ubuntu/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:90: DeprecationWarning: verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.
+    warnings.warn(DeprecationWarning('verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.'))
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
+  /home/ubuntu/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:97: UserWarning: alibi is turned on, setting `learned_pos_emb` to `False.`
+    warnings.warn(f'alibi is turned on, setting `learned_pos_emb` to `False.`')
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_regression
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_regression
+  /home/ubuntu/src/transformers/src/transformers/quantizers/auto.py:178: UserWarning: You passed `quantization_config` or equivalent parameters to `from_pretrained` but the model you're loading already has a `quantization_config` attribute. The `quantization_config` from the model will be used.
+    warnings.warn(warning_msg)
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1254: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+    warnings.warn(
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1881: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cuda, whereas the model is on meta. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('meta') before running `.generate()`.
+    warnings.warn(
+
+tests/quantization/bnb/test_mixed_int8.py: 18 warnings
+  /home/ubuntu/src/transformers/src/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+    warnings.warn(
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
+  /home/ubuntu/src/transformers/tests/quantization/bnb/test_mixed_int8.py:853: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+    with torch.cuda.amp.autocast():
+
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
+  /home/ubuntu/src/bnb/bitsandbytes/autograd/_functions.py:316: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+    warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 45 passed, 32 warnings in 211.25s (0:03:31) ==================

@@ -1,0 +1,74 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.19, pytest-8.3.2, pluggy-1.5.0 -- /home/ubuntu/.condax/mamba/envs/bnb/bin/python3.8
+cachedir: .pytest_cache
+rootdir: /home/ubuntu/src/transformers
+configfile: pyproject.toml
+collecting ... collected 43 items
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_bnb_4bit_wrong_config PASSED [  2%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_device_and_dtype_assignment PASSED [  4%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_fp32_4bit_conversion PASSED [  6%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality PASSED [  9%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality_config PASSED [ 11%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality_dequantize PASSED [ 13%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_linear_are_4bit PASSED [ 16%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_memory_footprint PASSED [ 18%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_original_dtype PASSED [ 20%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_quantization_config_json_serialization PASSED [ 23%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_quantization_num_parameters PASSED [ 25%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_rwkv_4bit PASSED  [ 27%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32 PASSED [ 30%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32 PASSED [ 32%]
+tests/quantization/bnb/test_4bit.py::Classes4BitModelTest::test_correct_head_class PASSED [ 34%]
+tests/quantization/bnb/test_4bit.py::Pipeline4BitTest::test_pipeline PASSED [ 37%]
+tests/quantization/bnb/test_4bit.py::Bnb4bitTestMultiGpu::test_multi_gpu_loading PASSED [ 39%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training PASSED [ 41%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_bnb_4bit_wrong_config PASSED [ 44%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_device_and_dtype_assignment PASSED [ 46%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_fp32_4bit_conversion PASSED [ 48%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_generate_quality PASSED [ 51%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_generate_quality_config PASSED [ 53%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_generate_quality_dequantize PASSED [ 55%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_linear_are_4bit PASSED [ 58%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_memory_footprint PASSED [ 60%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_original_dtype PASSED [ 62%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_quantization_config_json_serialization PASSED [ 65%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_quantization_num_parameters PASSED [ 67%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_rwkv_4bit PASSED [ 69%]
+tests/quantization/bnb/test_4bit.py::BaseSerializationTest::test_serialization PASSED [ 72%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_double_safe PASSED [ 74%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_double_unsafe PASSED [ 76%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_single_safe PASSED [ 79%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_fp4_single_unsafe PASSED [ 81%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_double_unsafe PASSED [ 83%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_single_safe PASSED [ 86%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_nf4_single_unsafe PASSED [ 88%]
+tests/quantization/bnb/test_4bit.py::ExtendedSerializationTest::test_serialization PASSED [ 90%]
+tests/quantization/bnb/test_4bit.py::BloomSerializationTest::test_serialization PASSED [ 93%]
+tests/quantization/bnb/test_4bit.py::GPTSerializationTest::test_serialization PASSED [ 95%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestBasicConfigTest::test_load_in_4_and_8_bit_fails PASSED [ 97%]
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestBasicConfigTest::test_set_load_in_8_bit PASSED [100%]
+
+=============================== warnings summary ===============================
+tests/quantization/bnb/test_4bit.py: 11 warnings
+  /home/ubuntu/src/bnb/bitsandbytes/nn/modules.py:437: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
+    warnings.warn(
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1254: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+    warnings.warn(
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
+tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
+  /home/ubuntu/src/bnb/bitsandbytes/nn/modules.py:432: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference.
+    warnings.warn(
+
+tests/quantization/bnb/test_4bit.py: 23 warnings
+  /home/ubuntu/src/transformers/src/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================= 43 passed, 40 warnings in 148.68s (0:02:28) ==================
