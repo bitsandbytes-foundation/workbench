@@ -1,25 +1,5 @@
 4-bit Test Error Summary:
-     68 
-     17 unsupported operand type(s) for -: 'FloorDiv' and 'StrictGreaterThan'
-     17 torch._dynamo.exc.TorchRuntimeError: Failed running call_function <built-in function sub>(*(((s0*s1)//s2), Mod(s0*s1, s2) > 0), **{}):
-     17 torch._dynamo.config.suppress_errors = True
-     17 import torch._dynamo
-     17 from user code:
-     17 absmax[: blocks - has_rem] = torch.abs(A_com_reshaped).max(dim=-1)[0]
-     17 You can suppress this exception and fall back to eager by setting:
-     17 Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
-     17 File "/home/sdp/src/bnb/bitsandbytes/backends/cpu_xpu_common.py", line 337, in <resume in quantize_4bit_impl>
-     12 AssertionError: Torch not compiled with CUDA enabled
-      5 ValueError: Supplied state dict for model.decoder.layers.0.fc1.weight does not contain `bitsandbytes__*` and possibly other `quantized_stats` components.
-      4 ValueError: Supplied state dict for model.decoder.layers.0.self_attn.k_proj.weight does not contain `bitsandbytes__*` and possibly other `quantized_stats` components.
-      1 ValueError: You are trying to save a non contiguous tensor: `transformer.h.0.attn.c_attn.weight` which is not allowed. It either means you are trying to save tensors which are reference of each other in which case it's recommended to save only the full tensors, and reslice at load time, or simply call `.contiguous()` on your tensor to pack it before saving.
-      1 ValueError: Supplied state dict for transformer.h.0.mlp.dense_4h_to_h.weight does not contain `bitsandbytes__*` and possibly other `quantized_stats` components.
-      1 AttributeError: pipe
-      1 AssertionError: False is not true
+      2 AssertionError: False is not true
 
 8-bit Test Error Summary:
-     37 AssertionError: Torch not compiled with CUDA enabled
-      3 RuntimeError: "LayerNormKernelImpl" not implemented for 'Half'
-      1 RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cpu and xpu:0! (when checking argument for argument index in method wrapper_XPU__index_select)
-      1 AttributeError: pipe
-      1 AssertionError: False is not true
+No errors found in 8-bit tests.
