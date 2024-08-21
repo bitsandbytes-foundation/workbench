@@ -1,0 +1,6 @@
+4-bit Test Error Summary:
+No errors found in 4-bit tests.
+
+8-bit Test Error Summary:
+     24 Exception: cublasLt ran into an error!
+      1 AssertionError: False is not true
