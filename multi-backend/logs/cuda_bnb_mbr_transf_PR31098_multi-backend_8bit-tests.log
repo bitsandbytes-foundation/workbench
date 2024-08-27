@@ -72,11 +72,11 @@ tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serializ
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32
-  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1254: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1231: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
     warnings.warn(
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map
-  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1881: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cuda, whereas the model is on meta. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('meta') before running `.generate()`.
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1900: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cuda, whereas the model is on meta. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('meta') before running `.generate()`.
     warnings.warn(
 
 tests/quantization/bnb/test_mixed_int8.py: 18 warnings
@@ -84,8 +84,8 @@ tests/quantization/bnb/test_mixed_int8.py: 18 warnings
     warnings.warn(
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
-  /home/ubuntu/src/bnb/bitsandbytes/autograd/_functions.py:327: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to torch.float16 during quantization
-    warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to {A_dtype} during quantization")
+  /home/ubuntu/src/bnb/bitsandbytes/autograd/_functions.py:316: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+    warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-================= 45 passed, 31 warnings in 218.36s (0:03:38) ==================
+================= 45 passed, 31 warnings in 254.32s (0:04:14) ==================

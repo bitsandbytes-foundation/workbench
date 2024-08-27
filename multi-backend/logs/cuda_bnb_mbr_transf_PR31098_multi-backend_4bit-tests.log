@@ -51,19 +51,24 @@ tests/quantization/bnb/test_4bit.py::Bnb4BitTestBasicConfigTest::test_set_load_i
 
 =============================== warnings summary ===============================
 tests/quantization/bnb/test_4bit.py: 11 warnings
-  /home/ubuntu/src/bnb/bitsandbytes/nn/modules.py:437: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
+  /home/ubuntu/src/bnb/bitsandbytes/nn/modules.py:452: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
+    warnings.warn(
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_rwkv_4bit
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_rwkv_4bit
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1347: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
     warnings.warn(
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
-  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1254: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1231: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
     warnings.warn(
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
-  /home/ubuntu/src/bnb/bitsandbytes/nn/modules.py:432: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference.
+  /home/ubuntu/src/bnb/bitsandbytes/nn/modules.py:447: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference.
     warnings.warn(
 
 tests/quantization/bnb/test_4bit.py: 23 warnings
@@ -71,4 +76,4 @@ tests/quantization/bnb/test_4bit.py: 23 warnings
     warnings.warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-================= 43 passed, 40 warnings in 148.68s (0:02:28) ==================
+================= 43 passed, 42 warnings in 238.29s (0:03:58) ==================
