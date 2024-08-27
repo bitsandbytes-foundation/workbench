@@ -1,9 +1,8 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.10.14, pytest-8.0.0, pluggy-1.5.0 -- /home/sdp/.condax/mamba/envs/bnb/bin/python3.10
+platform linux -- Python 3.10.0, pytest-8.3.2, pluggy-1.5.0 -- /home/sdp/.condax/mamba/envs/bnb_cpu/bin/python3.10
 cachedir: .pytest_cache
 rootdir: /home/sdp/src/transformers
 configfile: pyproject.toml
-plugins: subtests-0.13.1, xdist-3.6.1
 collecting ... collected 43 items
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_bnb_4bit_wrong_config PASSED [  2%]
@@ -51,17 +50,19 @@ tests/quantization/bnb/test_4bit.py::Bnb4BitTestBasicConfigTest::test_load_in_4_
 tests/quantization/bnb/test_4bit.py::Bnb4BitTestBasicConfigTest::test_set_load_in_8_bit PASSED [100%]
 
 =============================== warnings summary ===============================
-../../.condax/mamba/envs/bnb/lib/python3.10/site-packages/torchvision/io/image.py:13
-  /home/sdp/.condax/mamba/envs/bnb/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/home/sdp/.condax/mamba/envs/bnb/lib/python3.10/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
-    warn(
-
-tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_bnb_4bit_wrong_config
-  /home/sdp/src/accelerate/src/accelerate/utils/imports.py:340: UserWarning: Intel Extension for PyTorch 2.1 needs to work with PyTorch 2.1.*, but PyTorch 2.4.0 is found. Please switch to the matching version and run again.
-    warnings.warn(
+../../.condax/mamba/envs/bnb_cpu/lib/python3.10/site-packages/intel_extension_for_pytorch/nn/utils/_weight_prepack.py:5
+  /home/sdp/.condax/mamba/envs/bnb_cpu/lib/python3.10/site-packages/intel_extension_for_pytorch/nn/utils/_weight_prepack.py:5: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
 
 tests/quantization/bnb/test_4bit.py: 39 warnings
   /home/sdp/src/bnb/bitsandbytes/backends/cpu_xpu_common.py:317: UserWarning: fp4 quantization is currently slow on CPU/XPU. Please Use nf4 instead for better performance.
     warnings.warn("fp4 quantization is currently slow on CPU/XPU. Please Use nf4 instead for better performance.")
+
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_bnb_4bit_wrong_config
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_rwkv_4bit
+tests/quantization/bnb/test_4bit.py::BaseSerializationTest::test_serialization
+  /home/sdp/.condax/mamba/envs/bnb_cpu/lib/python3.10/site-packages/torch/storage.py:414: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+    return torch.load(io.BytesIO(b))
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality
 tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_generate_quality_config
@@ -77,7 +78,7 @@ tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
-  /home/sdp/src/transformers/src/transformers/generation/utils.py:1254: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  /home/sdp/src/transformers/src/transformers/generation/utils.py:1231: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
     warnings.warn(
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
@@ -89,6 +90,10 @@ tests/quantization/bnb/test_4bit.py: 23 warnings
   /home/sdp/src/transformers/src/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
     warnings.warn(
 
+tests/quantization/bnb/test_4bit.py::Bnb4BitTestTraining::test_training
+  /home/sdp/.condax/mamba/envs/bnb_cpu/lib/python3.10/site-packages/torch/autograd/graph.py:768: UserWarning: aten::layer_norm: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ============================
 SKIPPED [2] tests/quantization/bnb/test_4bit.py:199: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
@@ -97,4 +102,4 @@ SKIPPED [4] tests/quantization/bnb/test_4bit.py:579: Test skipped due to NotImpl
 SKIPPED [1] tests/quantization/bnb/test_4bit.py:686: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
 SKIPPED [1] tests/quantization/bnb/test_4bit.py:683: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
 SKIPPED [1] tests/quantization/bnb/test_4bit.py:672: Test skipped due to NotImplementedError: bnb_4bit_use_double_quant is not supported yet for CPU/XPU
-=========== 33 passed, 10 skipped, 77 warnings in 229.01s (0:03:49) ============
+=========== 33 passed, 10 skipped, 80 warnings in 217.31s (0:03:37) ============

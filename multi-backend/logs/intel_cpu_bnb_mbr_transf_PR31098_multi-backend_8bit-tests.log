@@ -1,9 +1,8 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.10.14, pytest-8.0.0, pluggy-1.5.0 -- /home/sdp/.condax/mamba/envs/bnb/bin/python3.10
+platform linux -- Python 3.10.0, pytest-8.3.2, pluggy-1.5.0 -- /home/sdp/.condax/mamba/envs/bnb_cpu/bin/python3.10
 cachedir: .pytest_cache
 rootdir: /home/sdp/src/transformers
 configfile: pyproject.toml
-plugins: subtests-0.13.1, xdist-3.6.1
 collecting ... collected 45 items
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_device_and_dtype_assignment PASSED [  2%]
@@ -53,13 +52,9 @@ tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_quantization_
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_raise_if_config_and_load_in_8bit PASSED [100%]
 
 =============================== warnings summary ===============================
-../../.condax/mamba/envs/bnb/lib/python3.10/site-packages/torchvision/io/image.py:13
-  /home/sdp/.condax/mamba/envs/bnb/lib/python3.10/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/home/sdp/.condax/mamba/envs/bnb/lib/python3.10/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
-    warn(
-
-../accelerate/src/accelerate/utils/imports.py:340
-  /home/sdp/src/accelerate/src/accelerate/utils/imports.py:340: UserWarning: Intel Extension for PyTorch 2.1 needs to work with PyTorch 2.1.*, but PyTorch 2.4.0 is found. Please switch to the matching version and run again.
-    warnings.warn(
+../../.condax/mamba/envs/bnb_cpu/lib/python3.10/site-packages/intel_extension_for_pytorch/nn/utils/_weight_prepack.py:5
+  /home/sdp/.condax/mamba/envs/bnb_cpu/lib/python3.10/site-packages/intel_extension_for_pytorch/nn/utils/_weight_prepack.py:5: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+    import pkg_resources
 
 tests/quantization/bnb/test_mixed_int8.py: 26 warnings
   /home/sdp/src/bnb/bitsandbytes/autograd/_functions.py:327: UserWarning: MatMul8bitLt: inputs will be cast from torch.float16 to torch.bfloat16 during quantization
@@ -67,12 +62,12 @@ tests/quantization/bnb/test_mixed_int8.py: 26 warnings
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
-  /home/sdp/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:90: DeprecationWarning: verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.
+  /home/sdp/.cache/huggingface/modules/transformers_modules/mosaicml/mpt_7b/_da218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:90: DeprecationWarning: verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.
     warnings.warn(DeprecationWarning('verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.'))
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
-  /home/sdp/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:97: UserWarning: alibi is turned on, setting `learned_pos_emb` to `False.`
+  /home/sdp/.cache/huggingface/modules/transformers_modules/mosaicml/mpt_7b/_da218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:97: UserWarning: alibi is turned on, setting `learned_pos_emb` to `False.`
     warnings.warn(f'alibi is turned on, setting `learned_pos_emb` to `False.`')
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization
@@ -85,7 +80,7 @@ tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serializ
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32
-  /home/sdp/src/transformers/src/transformers/generation/utils.py:1254: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  /home/sdp/src/transformers/src/transformers/generation/utils.py:1231: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
     warnings.warn(
 
 tests/quantization/bnb/test_mixed_int8.py: 18 warnings
@@ -99,6 +94,10 @@ tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
   /home/sdp/src/bnb/bitsandbytes/autograd/_functions.py:327: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to torch.bfloat16 during quantization
     warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to {A_dtype} during quantization")
 
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
+  /home/sdp/.condax/mamba/envs/bnb_cpu/lib/python3.10/site-packages/torch/autograd/graph.py:768: UserWarning: aten::layer_norm: an autograd kernel was not registered to the Autograd key(s) but we are trying to backprop through it. This may lead to silently incorrect behavior. This behavior is deprecated and will be removed in a future version of PyTorch. If your operator is differentiable, please ensure you have registered an autograd kernel to the correct Autograd key (e.g. DispatchKey::Autograd, DispatchKey::CompositeImplicitAutograd). If your operator is not differentiable, or to squash this warning and use the previous behavior, please register torch::CppFunction::makeFallthrough() to DispatchKey::Autograd. (Triggered internally at ../torch/csrc/autograd/autograd_not_implemented_fallback.cpp:63.)
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ============================
 SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:675: test requires multiple GPUs
@@ -106,4 +105,4 @@ SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:790: test requires multipl
 SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:817: test requires multiple GPUs
 SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:763: test requires multiple GPUs
 SKIPPED [1] tests/quantization/bnb/test_mixed_int8.py:715: test requires multiple GPUs
-============ 40 passed, 5 skipped, 61 warnings in 252.13s (0:04:12) ============
+============ 40 passed, 5 skipped, 61 warnings in 217.58s (0:03:37) ============
