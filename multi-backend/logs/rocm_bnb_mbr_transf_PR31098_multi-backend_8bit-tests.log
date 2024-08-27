@@ -71,9 +71,9 @@ tests/quantization/bnb/test_mixed_int8.py:273:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -81,7 +81,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -123,7 +123,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -296,9 +296,9 @@ tests/quantization/bnb/test_mixed_int8.py:291:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -306,7 +306,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -348,7 +348,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -523,32 +523,34 @@ src/transformers/modeling_utils.py:1420: in dequantize
     return hf_quantizer.dequantize(self)
 src/transformers/quantizers/base.py:202: in dequantize
     model = self._dequantize(model)
-src/transformers/quantizers/quantizer_bnb_8bit.py:313: in _dequantize
+src/transformers/quantizers/quantizer_bnb_8bit.py:309: in _dequantize
     model = dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:460: in dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:464: in dequantize_and_replace
     model, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:426: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:430: in _dequantize_and_replace
     new_module.weight = torch.nn.Parameter(dequantize_bnb_weight(module.weight, dtype, state))
-src/transformers/integrations/bitsandbytes.py:363: in dequantize_bnb_weight
+src/transformers/integrations/bitsandbytes.py:367: in dequantize_bnb_weight
     out32, Sout32 = bnb.functional.igemmlt(im, state.CxB, Sim, state.SB)
 ../bnb/bitsandbytes/functional.py:1744: in igemmlt
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
-A = tensor([[127,   0,   0,  ...,   0,   0,   0],
-        [  0, 127,   0,  ...,   0,   0,   0],
-        [  0,   0, 127,  .... 0,   0,  ...,   0, 127,   0],
-        [  0,   0,   0,  ...,   0,   0, 127]], device='cuda:1',
-       dtype=torch.int8)
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
+A = tensor([[0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        ...,
+   ... ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0],
+        [0, 0, 0,  ..., 0, 0, 0]], device='cuda:1', dtype=torch.int8)
 B = tensor([[-41,  25,   2,  ...,  14, -26, -29],
         [-52,  20,  10,  ..., -21,  -5,  15],
         [ 34,   9,  -3,  ....-8,  24,  ..., -25,  19,  46],
@@ -726,9 +728,9 @@ tests/quantization/bnb/test_mixed_int8.py:477:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -736,7 +738,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -780,7 +782,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[  0, -42,   8,  ...,  -4,  18,  -7],
         [ -3, -29,  22,  ...,  -9,  45,  10],
         [ -2,  16, -44,  ...,  -9, -51, -25],
@@ -965,9 +967,9 @@ tests/quantization/bnb/test_mixed_int8.py:401:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -975,7 +977,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -1017,7 +1019,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -1205,9 +1207,9 @@ tests/quantization/bnb/test_mixed_int8.py:428:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -1215,7 +1217,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -1257,7 +1259,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -1445,9 +1447,9 @@ tests/quantization/bnb/test_mixed_int8.py:455:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -1455,7 +1457,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -1499,7 +1501,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[  0, -42,   8,  ...,  -4,  18,  -7],
         [ -3, -29,  22,  ...,  -9,  45,  10],
         [ -2,  16, -44,  ...,  -9, -51, -25],
@@ -1651,7 +1653,7 @@ To disable this warning, you can either:
 	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
 Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
 `low_cpu_mem_usage` was None, now set to True since model is quantized.
-Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:00<00:05,  1.38it/s]Loading checkpoint shards:  25%|██▌       | 2/8 [00:00<00:02,  2.29it/s]Loading checkpoint shards:  38%|███▊      | 3/8 [00:01<00:01,  2.96it/s]Loading checkpoint shards:  50%|█████     | 4/8 [00:01<00:01,  3.40it/s]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:01<00:00,  3.71it/s]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:01<00:00,  3.94it/s]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:02<00:00,  4.11it/s]Loading checkpoint shards: 100%|██████████| 8/8 [00:02<00:00,  4.51it/s]Loading checkpoint shards: 100%|██████████| 8/8 [00:02<00:00,  3.55it/s]
+Loading checkpoint shards:   0%|          | 0/8 [00:00<?, ?it/s]Loading checkpoint shards:  12%|█▎        | 1/8 [00:00<00:05,  1.35it/s]Loading checkpoint shards:  25%|██▌       | 2/8 [00:00<00:02,  2.23it/s]Loading checkpoint shards:  38%|███▊      | 3/8 [00:01<00:01,  2.79it/s]Loading checkpoint shards:  50%|█████     | 4/8 [00:01<00:01,  3.19it/s]Loading checkpoint shards:  62%|██████▎   | 5/8 [00:01<00:00,  3.49it/s]Loading checkpoint shards:  75%|███████▌  | 6/8 [00:01<00:00,  3.69it/s]Loading checkpoint shards:  88%|████████▊ | 7/8 [00:02<00:00,  3.86it/s]Loading checkpoint shards: 100%|██████████| 8/8 [00:02<00:00,  4.20it/s]Loading checkpoint shards: 100%|██████████| 8/8 [00:02<00:00,  3.35it/s]
 _______________ MixedInt8T5Test.test_inference_with_keep_in_fp32 _______________
 
 self = <bnb.test_mixed_int8.MixedInt8T5Test testMethod=test_inference_with_keep_in_fp32>
@@ -1678,9 +1680,9 @@ tests/quantization/bnb/test_mixed_int8.py:543:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1741: in generate
+src/transformers/generation/utils.py:1839: in generate
     model_kwargs = self._prepare_encoder_decoder_kwargs_for_generation(
-src/transformers/generation/utils.py:549: in _prepare_encoder_decoder_kwargs_for_generation
+src/transformers/generation/utils.py:526: in _prepare_encoder_decoder_kwargs_for_generation
     model_kwargs["encoder_outputs"]: ModelOutput = encoder(**encoder_kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -1732,7 +1734,7 @@ src/transformers/models/t5/modeling_t5.py:512: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -1917,9 +1919,9 @@ tests/quantization/bnb/test_mixed_int8.py:574:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1741: in generate
+src/transformers/generation/utils.py:1839: in generate
     model_kwargs = self._prepare_encoder_decoder_kwargs_for_generation(
-src/transformers/generation/utils.py:549: in _prepare_encoder_decoder_kwargs_for_generation
+src/transformers/generation/utils.py:526: in _prepare_encoder_decoder_kwargs_for_generation
     model_kwargs["encoder_outputs"]: ModelOutput = encoder(**encoder_kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -1971,7 +1973,7 @@ src/transformers/models/t5/modeling_t5.py:512: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[-20, -21, -21,  ...,  -1,  52,  21],
         [ 22,  40,   3,  ...,  67,  -9, -44],
         [ 83,  55, -53,  ....10,  -6,  ...,  30, -44, -50],
@@ -2146,9 +2148,9 @@ tests/quantization/bnb/test_mixed_int8.py:517:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1741: in generate
+src/transformers/generation/utils.py:1839: in generate
     model_kwargs = self._prepare_encoder_decoder_kwargs_for_generation(
-src/transformers/generation/utils.py:549: in _prepare_encoder_decoder_kwargs_for_generation
+src/transformers/generation/utils.py:526: in _prepare_encoder_decoder_kwargs_for_generation
     model_kwargs["encoder_outputs"]: ModelOutput = encoder(**encoder_kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -2200,7 +2202,7 @@ src/transformers/models/t5/modeling_t5.py:512: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -2388,9 +2390,9 @@ src/transformers/pipelines/text_generation.py:351: in _forward
     generated_sequence = self.model.generate(input_ids=input_ids, attention_mask=attention_mask, **generate_kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -2398,7 +2400,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -2440,7 +2442,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -2614,9 +2616,9 @@ tests/quantization/bnb/test_mixed_int8.py:692:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -2624,7 +2626,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -2666,7 +2668,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -2848,9 +2850,9 @@ tests/quantization/bnb/test_mixed_int8.py:709: in check_inference_correctness
     output_parallel = model.generate(input_ids=encoded_input["input_ids"].to(torch_device), max_new_tokens=10)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -2858,7 +2860,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -2900,7 +2902,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[  0, -42,   8,  ...,  -4,  18,  -7],
         [ -3, -29,  22,  ...,  -9,  45,  10],
         [ -2,  16, -44,  ...,  -9, -51, -25],
@@ -3084,9 +3086,9 @@ tests/quantization/bnb/test_mixed_int8.py:709: in check_inference_correctness
     output_parallel = model.generate(input_ids=encoded_input["input_ids"].to(torch_device), max_new_tokens=10)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -3094,7 +3096,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -3136,7 +3138,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[  0, -42,   8,  ...,  -4,  18,  -7],
         [ -3, -29,  22,  ...,  -9,  45,  10],
         [ -2,  16, -44,  ...,  -9, -51, -25],
@@ -3321,9 +3323,9 @@ tests/quantization/bnb/test_mixed_int8.py:709: in check_inference_correctness
     output_parallel = model.generate(input_ids=encoded_input["input_ids"].to(torch_device), max_new_tokens=10)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -3331,7 +3333,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -3373,7 +3375,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[-25, -33,  11,  ...,  34,  22,  36]], device='cuda:0',
        dtype=torch.int8)
 B = tensor([[ 23,  55, 109,  ...,  -6, -32,  -9],
@@ -3572,9 +3574,9 @@ tests/quantization/bnb/test_mixed_int8.py:709: in check_inference_correctness
     output_parallel = model.generate(input_ids=encoded_input["input_ids"].to(torch_device), max_new_tokens=10)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -3582,7 +3584,7 @@ src/transformers/generation/utils.py:2923: in _sample
     return forward_call(*args, **kwargs)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/accelerate/hooks.py:169: in new_forward
     output = module._old_forward(*args, **kwargs)
-src/transformers/models/bloom/modeling_bloom.py:955: in forward
+src/transformers/models/bloom/modeling_bloom.py:950: in forward
     transformer_outputs = self.transformer(
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -3624,7 +3626,7 @@ src/transformers/models/bloom/modeling_bloom.py:319: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -3838,7 +3840,7 @@ src/transformers/models/opt/modeling_opt.py:729: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[-43, -30, -60,  ..., -22,  -4,  32],
         [ 65,   9,  45,  ...,  29,  66, -59],
         [-17, -17,  35,  ..., -11, -64, -55],
@@ -4028,9 +4030,9 @@ tests/quantization/bnb/test_mixed_int8.py:273:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -4080,7 +4082,7 @@ src/transformers/models/gpt2/modeling_gpt2.py:517: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -4255,9 +4257,9 @@ tests/quantization/bnb/test_mixed_int8.py:291:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -4307,7 +4309,7 @@ src/transformers/models/gpt2/modeling_gpt2.py:517: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -4484,27 +4486,27 @@ src/transformers/modeling_utils.py:1420: in dequantize
     return hf_quantizer.dequantize(self)
 src/transformers/quantizers/base.py:202: in dequantize
     model = self._dequantize(model)
-src/transformers/quantizers/quantizer_bnb_8bit.py:313: in _dequantize
+src/transformers/quantizers/quantizer_bnb_8bit.py:309: in _dequantize
     model = dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:460: in dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:464: in dequantize_and_replace
     model, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:442: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:446: in _dequantize_and_replace
     _, has_been_replaced = _dequantize_and_replace(
-src/transformers/integrations/bitsandbytes.py:426: in _dequantize_and_replace
+src/transformers/integrations/bitsandbytes.py:430: in _dequantize_and_replace
     new_module.weight = torch.nn.Parameter(dequantize_bnb_weight(module.weight, dtype, state))
-src/transformers/integrations/bitsandbytes.py:363: in dequantize_bnb_weight
+src/transformers/integrations/bitsandbytes.py:367: in dequantize_bnb_weight
     out32, Sout32 = bnb.functional.igemmlt(im, state.CxB, Sim, state.SB)
 ../bnb/bitsandbytes/functional.py:1744: in igemmlt
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[127,   0,   0,  ...,   0,   0,   0],
         [  0, 127,   0,  ...,   0,   0,   0],
         [  0,   0, 127,  .... 0,   0,  ...,   0, 127,   0],
@@ -4687,9 +4689,9 @@ tests/quantization/bnb/test_mixed_int8.py:921:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -4741,7 +4743,7 @@ src/transformers/models/gpt2/modeling_gpt2.py:517: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[ 34, -19, -43,  ...,  -2,  16,   8],
         [ 20,   1,  16,  ...,   9, -20,   3],
         [ -7,  -7, -18,  ..., -80,  22, -95],
@@ -4927,9 +4929,9 @@ tests/quantization/bnb/test_mixed_int8.py:401:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -4979,7 +4981,7 @@ src/transformers/models/gpt2/modeling_gpt2.py:517: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -5169,9 +5171,9 @@ tests/quantization/bnb/test_mixed_int8.py:428:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -5221,7 +5223,7 @@ src/transformers/models/gpt2/modeling_gpt2.py:517: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
         [0, 0, 0,  ..., 0, 0, 0],
@@ -5411,9 +5413,9 @@ tests/quantization/bnb/test_mixed_int8.py:455:
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/utils/_contextlib.py:116: in decorate_context
     return func(*args, **kwargs)
-src/transformers/generation/utils.py:1996: in generate
+src/transformers/generation/utils.py:2013: in generate
     result = self._sample(
-src/transformers/generation/utils.py:2923: in _sample
+src/transformers/generation/utils.py:2959: in _sample
     outputs = self(**model_inputs, return_dict=True)
 ../../.condax/mamba/envs/bnb/lib/python3.8/site-packages/torch/nn/modules/module.py:1553: in _wrapped_call_impl
     return self._call_impl(*args, **kwargs)
@@ -5465,7 +5467,7 @@ src/transformers/models/gpt2/modeling_gpt2.py:517: in forward
     return backends[A.device.type].igemmlt(A, B, SA, SB, out=out, Sout=Sout, dtype=dtype)
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
-self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7fa3a1744940>
+self = <bitsandbytes.backends.rocm.ROCmBackend object at 0x7eff60ad7c70>
 A = tensor([[ 34, -19, -43,  ...,  -2,  16,   8],
         [ 20,   1,  16,  ...,   9, -20,   3],
         [ -7,  -7, -18,  ..., -80,  22, -95],
@@ -5617,7 +5619,7 @@ To disable this warning, you can either:
 	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
 Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
 `low_cpu_mem_usage` was None, now set to True since model is quantized.
-Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:00<00:02,  3.30it/s]Loading checkpoint shards:  22%|██▏       | 2/9 [00:00<00:02,  3.30it/s]Loading checkpoint shards:  33%|███▎      | 3/9 [00:00<00:01,  3.44it/s]Loading checkpoint shards:  44%|████▍     | 4/9 [00:01<00:01,  3.14it/s]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:01<00:01,  3.25it/s]Loading checkpoint shards:  67%|██████▋   | 6/9 [00:01<00:00,  3.35it/s]Loading checkpoint shards:  78%|███████▊  | 7/9 [00:02<00:00,  3.42it/s]Loading checkpoint shards:  89%|████████▉ | 8/9 [00:02<00:00,  3.30it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:02<00:00,  3.54it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:02<00:00,  3.39it/s]
+Loading checkpoint shards:   0%|          | 0/9 [00:00<?, ?it/s]Loading checkpoint shards:  11%|█         | 1/9 [00:00<00:02,  3.59it/s]Loading checkpoint shards:  22%|██▏       | 2/9 [00:00<00:01,  3.59it/s]Loading checkpoint shards:  33%|███▎      | 3/9 [00:00<00:01,  3.94it/s]Loading checkpoint shards:  44%|████▍     | 4/9 [00:01<00:01,  4.12it/s]Loading checkpoint shards:  56%|█████▌    | 5/9 [00:01<00:00,  4.18it/s]Loading checkpoint shards:  67%|██████▋   | 6/9 [00:01<00:00,  4.25it/s]Loading checkpoint shards:  78%|███████▊  | 7/9 [00:01<00:00,  3.34it/s]Loading checkpoint shards:  89%|████████▉ | 8/9 [00:02<00:00,  3.07it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:02<00:00,  3.18it/s]Loading checkpoint shards: 100%|██████████| 9/9 [00:02<00:00,  3.50it/s]
 The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
 Setting `pad_token_id` to `eos_token_id`:50256 for open-end generation.
 =============================== warnings summary ===============================
@@ -5639,7 +5641,7 @@ tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serializ
     warnings.warn(warning_msg)
 
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map
-  /home/huggingface/src/transformers/src/transformers/generation/utils.py:1881: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cuda, whereas the model is on meta. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('meta') before running `.generate()`.
+  /home/huggingface/src/transformers/src/transformers/generation/utils.py:1900: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cuda, whereas the model is on meta. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('meta') before running `.generate()`.
     warnings.warn(
 
 tests/quantization/bnb/test_mixed_int8.py: 18 warnings
@@ -5647,7 +5649,7 @@ tests/quantization/bnb/test_mixed_int8.py: 18 warnings
     warnings.warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-============ 25 failed, 20 passed, 27 warnings in 365.57s (0:06:05) ============
+============ 25 failed, 20 passed, 27 warnings in 350.81s (0:05:50) ============
 hipBLAS API failed with status 6
 error detectedhipBLAS API failed with status 6
 error detectedhipBLAS API failed with status 6

@@ -54,11 +54,16 @@ tests/quantization/bnb/test_4bit.py: 11 warnings
   /home/huggingface/src/bnb/bitsandbytes/nn/modules.py:437: UserWarning: Input type into Linear4bit is torch.float16, but bnb_4bit_compute_dtype=torch.float32 (default). This will lead to slow inference or training speed.
     warnings.warn(
 
+tests/quantization/bnb/test_4bit.py::Bnb4BitTest::test_rwkv_4bit
+tests/quantization/bnb/test_4bit.py::Bnb4BitGPT2Test::test_rwkv_4bit
+  /home/huggingface/src/transformers/src/transformers/generation/utils.py:1347: UserWarning: You have modified the pretrained model configuration to control generation. This is a deprecated strategy to control generation and will be removed soon, in a future version. Please use and modify the model generation configuration (see https://huggingface.co/docs/transformers/generation_strategies#default-text-generation-configuration )
+    warnings.warn(
+
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_without_keep_in_fp32
-  /home/huggingface/src/transformers/src/transformers/generation/utils.py:1254: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
+  /home/huggingface/src/transformers/src/transformers/generation/utils.py:1231: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
     warnings.warn(
 
 tests/quantization/bnb/test_4bit.py::Bnb4BitT5Test::test_inference_with_keep_in_fp32
@@ -77,4 +82,4 @@ tests/quantization/bnb/test_4bit.py::GPTSerializationTest::test_serialization
     warn(
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-================= 43 passed, 43 warnings in 273.62s (0:04:33) ==================
+================= 43 passed, 45 warnings in 262.84s (0:04:22) ==================
