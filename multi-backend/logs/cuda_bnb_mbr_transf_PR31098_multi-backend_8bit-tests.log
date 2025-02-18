@@ -1,91 +1,3193 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.8.19, pytest-8.3.2, pluggy-1.5.0 -- /home/ubuntu/.condax/mamba/envs/bnb/bin/python3.8
+platform linux -- Python 3.11.11, pytest-8.3.2, pluggy-1.5.0 -- /home/ubuntu/.condax/mamba/envs/bnb/bin/python3.11
 cachedir: .pytest_cache
 rootdir: /home/ubuntu/src/transformers
 configfile: pyproject.toml
-collecting ... collected 45 items
+collecting ... collected 62 items
 
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_device_and_dtype_assignment PASSED [  2%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_fp32_int8_conversion PASSED [  4%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality PASSED [  6%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_config PASSED [  8%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_dequantize PASSED [ 11%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert PASSED [ 13%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code PASSED [ 15%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_from_pretrained PASSED [ 17%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization PASSED [ 20%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_regression PASSED [ 22%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_sharded PASSED [ 24%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_linear_are_8bit PASSED [ 26%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_llm_skip PASSED [ 28%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_memory_footprint PASSED [ 31%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_original_dtype PASSED [ 33%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_quantization_config_json_serialization PASSED [ 35%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_raise_if_config_and_load_in_8bit PASSED [ 37%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32 PASSED [ 40%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized PASSED [ 42%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32 PASSED [ 44%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8ModelClassesTest::test_correct_head_class PASSED [ 46%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestPipeline::test_pipeline PASSED [ 48%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestMultiGpu::test_multi_gpu_loading PASSED [ 51%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map PASSED [ 53%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map_kwargs PASSED [ 55%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map PASSED [ 57%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_random_device_map PASSED [ 60%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training PASSED [ 62%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_device_and_dtype_assignment PASSED [ 64%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_fp32_int8_conversion PASSED [ 66%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality PASSED [ 68%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_config PASSED [ 71%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_dequantize PASSED [ 73%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert PASSED [ 75%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code PASSED [ 77%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_from_pretrained PASSED [ 80%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization PASSED [ 82%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_regression PASSED [ 84%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_sharded PASSED [ 86%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_linear_are_8bit PASSED [ 88%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_llm_skip PASSED [ 91%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_memory_footprint PASSED [ 93%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_original_dtype PASSED [ 95%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_quantization_config_json_serialization PASSED [ 97%]
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_raise_if_config_and_load_in_8bit PASSED [100%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_device_and_dtype_assignment FAILED [  1%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_fp32_int8_conversion FAILED [  3%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality FAILED [  4%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_config FAILED [  6%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_generate_quality_dequantize FAILED [  8%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert FAILED [  9%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code FAILED [ 11%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_from_pretrained FAILED [ 12%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization FAILED [ 14%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_regression FAILED [ 16%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_sharded FAILED [ 17%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_linear_are_8bit FAILED [ 19%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_llm_skip FAILED [ 20%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_memory_footprint FAILED [ 22%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_original_dtype FAILED [ 24%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_quantization_config_json_serialization FAILED [ 25%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_raise_if_config_and_load_in_8bit FAILED [ 27%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32 FAILED [ 29%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized FAILED [ 30%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32 FAILED [ 32%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8ModelClassesTest::test_correct_head_class FAILED [ 33%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestPipeline::test_pipeline FAILED [ 35%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestMultiGpu::test_multi_gpu_loading FAILED [ 37%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map PASSED [ 38%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_disk_loading_custom_device_map_kwargs PASSED [ 40%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map PASSED [ 41%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_random_device_map PASSED [ 43%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training FAILED [ 45%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_device_and_dtype_assignment FAILED [ 46%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_fp32_int8_conversion FAILED [ 48%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality FAILED [ 50%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_config FAILED [ 51%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_generate_quality_dequantize FAILED [ 53%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert FAILED [ 54%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code FAILED [ 56%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_from_pretrained FAILED [ 58%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization FAILED [ 59%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_regression FAILED [ 61%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_sharded FAILED [ 62%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_linear_are_8bit FAILED [ 64%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_llm_skip FAILED [ 66%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_memory_footprint FAILED [ 67%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_original_dtype FAILED [ 69%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_quantization_config_json_serialization FAILED [ 70%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_raise_if_config_and_load_in_8bit FAILED [ 72%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_device_and_dtype_assignment FAILED [ 74%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_fp32_int8_conversion FAILED [ 75%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_generate_quality FAILED [ 77%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_generate_quality_config FAILED [ 79%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_generate_quality_dequantize FAILED [ 80%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_get_keys_to_not_convert FAILED [ 82%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_get_keys_to_not_convert_trust_remote_code FAILED [ 83%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_int8_from_pretrained FAILED [ 85%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_int8_serialization FAILED [ 87%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_int8_serialization_regression FAILED [ 88%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_int8_serialization_sharded FAILED [ 90%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_linear_are_8bit FAILED [ 91%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_llm_skip FAILED [ 93%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_memory_footprint FAILED [ 95%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_original_dtype FAILED [ 96%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_quantization_config_json_serialization FAILED [ 98%]
+tests/quantization/bnb/test_mixed_int8.py::MixedInt8LlamaTest::test_raise_if_config_and_load_in_8bit FAILED [100%]
 
+=================================== FAILURES ===================================
+________________ MixedInt8Test.test_device_and_dtype_assignment ________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_device_and_dtype_assignment>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ MixedInt8Test.test_fp32_int8_conversion ____________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_fp32_int8_conversion>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________________ MixedInt8Test.test_generate_quality ______________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_generate_quality>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+__________________ MixedInt8Test.test_generate_quality_config __________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_generate_quality_config>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________ MixedInt8Test.test_generate_quality_dequantize ________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_generate_quality_dequantize>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+__________________ MixedInt8Test.test_get_keys_to_not_convert __________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_get_keys_to_not_convert>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________ MixedInt8Test.test_get_keys_to_not_convert_trust_remote_code _________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_get_keys_to_not_convert_trust_remote_code>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ MixedInt8Test.test_int8_from_pretrained ____________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_int8_from_pretrained>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________________ MixedInt8Test.test_int8_serialization _____________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_int8_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________ MixedInt8Test.test_int8_serialization_regression _______________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_int8_serialization_regression>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________ MixedInt8Test.test_int8_serialization_sharded _________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_int8_serialization_sharded>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________________ MixedInt8Test.test_linear_are_8bit ______________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_linear_are_8bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________________ MixedInt8Test.test_llm_skip __________________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_llm_skip>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________________ MixedInt8Test.test_memory_footprint ______________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_memory_footprint>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________________ MixedInt8Test.test_original_dtype _______________________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_original_dtype>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+__________ MixedInt8Test.test_quantization_config_json_serialization ___________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_quantization_config_json_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________ MixedInt8Test.test_raise_if_config_and_load_in_8bit ______________
+
+self = <bnb.test_mixed_int8.MixedInt8Test testMethod=test_raise_if_config_and_load_in_8bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________ MixedInt8T5Test.test_inference_with_keep_in_fp32 _______________
+
+self = <bnb.test_mixed_int8.MixedInt8T5Test testMethod=test_inference_with_keep_in_fp32>
+
+    def test_inference_with_keep_in_fp32(self):
+        r"""
+        Test whether it is possible to mix both `int8` and `fp32` weights when using `keep_in_fp32_modules` correctly.
+        `flan-t5-small` uses `T5DenseGatedActDense` whereas `google-t5/t5-small` uses `T5DenseReluDense`. We need to test
+        both cases.
+        """
+    
+        from transformers import T5ForConditionalGeneration
+    
+        # test with `google-t5/t5-small`
+        model = T5ForConditionalGeneration.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+    
+        # there was a bug with decoders - this test checks that it is fixed
+        self.assertTrue(isinstance(model.decoder.block[0].layer[0].SelfAttention.q, bnb.nn.Linear8bitLt))
+    
+        encoded_input = self.tokenizer(self.input_text, return_tensors="pt").to(model.device)
+        _ = model.generate(**encoded_input)
+    
+        # test with `flan-t5-small`
+>       model = T5ForConditionalGeneration.from_pretrained(
+            self.dense_act_model_name, load_in_8bit=True, device_map="auto"
+        )
+
+tests/quantization/bnb/test_mixed_int8.py:549: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -1,  25, -38,  ..., -37, -22,  18],
+            [ 47,  14,  35,  ...,  -... ...,  35,  17,  19],
+            [ 65,   5, -47,  ..., -36, -47, -62]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________ MixedInt8T5Test.test_inference_with_keep_in_fp32_serialized __________
+
+self = <bnb.test_mixed_int8.MixedInt8T5Test testMethod=test_inference_with_keep_in_fp32_serialized>
+
+    def test_inference_with_keep_in_fp32_serialized(self):
+        r"""
+        Test whether it is possible to mix both `int8` and `fp32` weights when using `keep_in_fp32_modules` correctly on
+        a serialized model.
+        `flan-t5-small` uses `T5DenseGatedActDense` whereas `google-t5/t5-small` uses `T5DenseReluDense`. We need to test
+        both cases.
+        """
+    
+        from transformers import T5ForConditionalGeneration
+    
+        # test with `google-t5/t5-small`
+        model = T5ForConditionalGeneration.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+    
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            model.save_pretrained(tmp_dir)
+    
+>           model = T5ForConditionalGeneration.from_pretrained(tmp_dir)
+
+tests/quantization/bnb/test_mixed_int8.py:571: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -13,  -59,    3,  ...,   22,  -29,  -95],
+            [ -36,  -22,   47,...3,   26,    1],
+            [ -80,    0,   -2,  ...,   40,  -32,  -39]], device='cuda:0',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Unused kwargs: ['_load_in_4bit', '_load_in_8bit', 'quant_method']. These kwargs are not used in <class 'transformers.utils.quantization_config.BitsAndBytesConfig'>.
+`low_cpu_mem_usage` was None, now default to True since model is quantized.
+_____________ MixedInt8T5Test.test_inference_without_keep_in_fp32 ______________
+
+self = <bnb.test_mixed_int8.MixedInt8T5Test testMethod=test_inference_without_keep_in_fp32>
+
+    def test_inference_without_keep_in_fp32(self):
+        r"""
+        Test whether it is possible to mix both `int8` and `fp32` weights when using `keep_in_fp32_modules` correctly.
+        `flan-t5-small` uses `T5DenseGatedActDense` whereas `google-t5/t5-small` uses `T5DenseReluDense`. We need to test
+        both cases.
+        """
+        from transformers import T5ForConditionalGeneration
+    
+        modules = T5ForConditionalGeneration._keep_in_fp32_modules
+        T5ForConditionalGeneration._keep_in_fp32_modules = None
+    
+        # test with `google-t5/t5-small`
+>       model = T5ForConditionalGeneration.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:518: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -13,  -59,    3,  ...,   22,  -29,  -95],
+            [ -36,  -22,   47,...3,   26,    1],
+            [ -80,    0,   -2,  ...,   40,  -32,  -39]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________ MixedInt8ModelClassesTest.test_correct_head_class _______________
+
+self = <bnb.test_mixed_int8.MixedInt8ModelClassesTest testMethod=test_correct_head_class>
+
+    def setUp(self):
+        super().setUp()
+        # model_name
+        self.model_name = "bigscience/bloom-560m"
+        self.seq_to_seq_name = "google-t5/t5-small"
+    
+        # Different types of model
+    
+>       self.base_model = AutoModel.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:596: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-46,  30, -37,  ...,  -7, -39, -23],
+            [  5,  41,  44,  ...,  1... ...,   8,  -3,  31],
+            [-15, -26,  -8,  ..., -27, -61, -54]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________________ MixedInt8TestPipeline.test_pipeline ______________________
+
+self = <bnb.test_mixed_int8.MixedInt8TestPipeline testMethod=test_pipeline>
+
+    def test_pipeline(self):
+        r"""
+        The aim of this test is to verify that the mixed int8 is compatible with `pipeline` from transformers. Since
+        we used pipline for inference speed benchmarking we want to make sure that this feature does not break anything
+        on pipline.
+        """
+        # self._clear_cuda_cache()
+>       self.pipe = pipeline(
+            "text-generation",
+            model=self.model_name,
+            model_kwargs={"device_map": "auto", "load_in_8bit": True},
+            max_new_tokens=self.MAX_NEW_TOKENS,
+        )
+
+tests/quantization/bnb/test_mixed_int8.py:660: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/pipelines/__init__.py:940: in pipeline
+    framework, model = infer_framework_load_model(
+src/transformers/pipelines/base.py:289: in infer_framework_load_model
+    model = model_class.from_pretrained(model, **kwargs)
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ MixedInt8TestMultiGpu.test_multi_gpu_loading _________________
+
+self = <bnb.test_mixed_int8.MixedInt8TestMultiGpu testMethod=test_multi_gpu_loading>
+
+    def test_multi_gpu_loading(self):
+        r"""
+        This tests that the model has been loaded and can be used correctly on a multi-GPU setup.
+        Let's just try to load a model on 2 GPUs and see if it works. The model we test has ~2GB of total, 3GB should suffice
+        """
+    
+>       model_parallel = AutoModelForCausalLM.from_pretrained(
+            self.model_name, load_in_8bit=True, device_map="balanced"
+        )
+
+tests/quantization/bnb/test_mixed_int8.py:684: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ 23, -21,  16,  ..., -47, -10,  41],
+            [ 55,  17, -12,  ...,  5... ..., -22,  23, -34],
+            [-10, -44, -20,  ...,   7, -62, -26]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________________ MixedInt8TestTraining.test_training ______________________
+
+self = <bnb.test_mixed_int8.MixedInt8TestTraining testMethod=test_training>
+
+    def test_training(self):
+        if version.parse(importlib.metadata.version("bitsandbytes")) < version.parse("0.37.0"):
+            self.skipTest(reason="This test requires bitsandbytes>=0.37.0")
+    
+        # Step 1: freeze all parameters
+>       model = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True)
+
+tests/quantization/bnb/test_mixed_int8.py:859: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[  19,   52,  -32,  ...,  -30, -126,   57],
+            [  76,  123,  -94,...9, -125,  -17],
+            [  73,  120,  103,  ...,   16,   33,  -86]], device='cuda:0',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+`low_cpu_mem_usage` was None, now default to True since model is quantized.
+______________ MixedInt8GPT2Test.test_device_and_dtype_assignment ______________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_device_and_dtype_assignment>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ MixedInt8GPT2Test.test_fp32_int8_conversion __________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_fp32_int8_conversion>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ MixedInt8GPT2Test.test_generate_quality ____________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_generate_quality>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________ MixedInt8GPT2Test.test_generate_quality_config ________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_generate_quality_config>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________ MixedInt8GPT2Test.test_generate_quality_dequantize ______________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_generate_quality_dequantize>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________________ MixedInt8GPT2Test.test_get_keys_to_not_convert ________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_get_keys_to_not_convert>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______ MixedInt8GPT2Test.test_get_keys_to_not_convert_trust_remote_code _______
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_get_keys_to_not_convert_trust_remote_code>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ MixedInt8GPT2Test.test_int8_from_pretrained __________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_int8_from_pretrained>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+__________________ MixedInt8GPT2Test.test_int8_serialization ___________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_int8_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________ MixedInt8GPT2Test.test_int8_serialization_regression _____________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_int8_serialization_regression>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________ MixedInt8GPT2Test.test_int8_serialization_sharded _______________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_int8_serialization_sharded>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________________ MixedInt8GPT2Test.test_linear_are_8bit ____________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_linear_are_8bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________________ MixedInt8GPT2Test.test_llm_skip ________________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_llm_skip>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ MixedInt8GPT2Test.test_memory_footprint ____________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_memory_footprint>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________________ MixedInt8GPT2Test.test_original_dtype _____________________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_original_dtype>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________ MixedInt8GPT2Test.test_quantization_config_json_serialization _________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_quantization_config_json_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________ MixedInt8GPT2Test.test_raise_if_config_and_load_in_8bit ____________
+
+self = <bnb.test_mixed_int8.MixedInt8GPT2Test testMethod=test_raise_if_config_and_load_in_8bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[-23,  -4,  90,  ..., -40,  21, -30],
+            [ -6, -29, -46,  ..., -5... ...,   3,  13,  47],
+            [ 22,  54,  44,  ...,   2,  17,  83]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________ MixedInt8LlamaTest.test_device_and_dtype_assignment ______________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_device_and_dtype_assignment>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ MixedInt8LlamaTest.test_fp32_int8_conversion _________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_fp32_int8_conversion>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ MixedInt8LlamaTest.test_generate_quality ___________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_generate_quality>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________ MixedInt8LlamaTest.test_generate_quality_config ________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_generate_quality_config>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_____________ MixedInt8LlamaTest.test_generate_quality_dequantize ______________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_generate_quality_dequantize>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________ MixedInt8LlamaTest.test_get_keys_to_not_convert ________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_get_keys_to_not_convert>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______ MixedInt8LlamaTest.test_get_keys_to_not_convert_trust_remote_code _______
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_get_keys_to_not_convert_trust_remote_code>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_________________ MixedInt8LlamaTest.test_int8_from_pretrained _________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_int8_from_pretrained>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+__________________ MixedInt8LlamaTest.test_int8_serialization __________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_int8_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________ MixedInt8LlamaTest.test_int8_serialization_regression _____________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_int8_serialization_regression>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+______________ MixedInt8LlamaTest.test_int8_serialization_sharded ______________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_int8_serialization_sharded>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ MixedInt8LlamaTest.test_linear_are_8bit ____________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_linear_are_8bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+_______________________ MixedInt8LlamaTest.test_llm_skip _______________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_llm_skip>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________________ MixedInt8LlamaTest.test_memory_footprint ___________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_memory_footprint>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+____________________ MixedInt8LlamaTest.test_original_dtype ____________________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_original_dtype>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+________ MixedInt8LlamaTest.test_quantization_config_json_serialization ________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_quantization_config_json_serialization>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+___________ MixedInt8LlamaTest.test_raise_if_config_and_load_in_8bit ___________
+
+self = <bnb.test_mixed_int8.MixedInt8LlamaTest testMethod=test_raise_if_config_and_load_in_8bit>
+
+    def setUp(self):
+        super().setUp()
+    
+        # Models and tokenizer
+        self.model_fp16 = AutoModelForCausalLM.from_pretrained(
+            self.model_name, torch_dtype=torch.float16, device_map="auto"
+        )
+>       self.model_8bit = AutoModelForCausalLM.from_pretrained(self.model_name, load_in_8bit=True, device_map="auto")
+
+tests/quantization/bnb/test_mixed_int8.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/transformers/models/auto/auto_factory.py:564: in from_pretrained
+    return model_class.from_pretrained(
+src/transformers/modeling_utils.py:4333: in from_pretrained
+    dispatch_model(model, **device_map_kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/accelerate/big_modeling.py:496: in dispatch_model
+    model.to(device)
+src/transformers/modeling_utils.py:3115: in to
+    return super().to(*args, **kwargs)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:1343: in to
+    return self._apply(convert)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:903: in _apply
+    module._apply(fn)
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:931: in _apply
+    p_should_use_set_data = compute_should_use_set_data(param, param_applied)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+tensor = Parameter containing:
+Parameter(Int8Params([[ -3,  -5, -14,  ...,  10,  -2, -26],
+            [  3,   7, -21,  ...,   ... ...,   5, -26,  20],
+            [-23,  -3, -10,  ...,   6, -25,  20]], device='cuda:1',
+           dtype=torch.int8))
+tensor_applied = None
+
+    def compute_should_use_set_data(tensor, tensor_applied):
+>       if torch._has_compatible_shallow_copy_type(tensor, tensor_applied):
+E       TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
+
+../../.condax/mamba/envs/bnb/lib/python3.11/site-packages/torch/nn/modules/module.py:906: TypeError
+----------------------------- Captured stderr call -----------------------------
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
 =============================== warnings summary ===============================
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
-  /home/ubuntu/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:90: DeprecationWarning: verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.
-    warnings.warn(DeprecationWarning('verbose argument for MPTConfig is now ignored and will be removed. Use python_log_level instead.'))
-
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_get_keys_to_not_convert_trust_remote_code
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_get_keys_to_not_convert_trust_remote_code
-  /home/ubuntu/.cache/huggingface/modules/transformers_modules/mosaicml/mpt-7b/ada218f9a93b5f1c6dce48a4cc9ff01fcba431e7/configuration_mpt.py:97: UserWarning: alibi is turned on, setting `learned_pos_emb` to `False.`
-    warnings.warn(f'alibi is turned on, setting `learned_pos_emb` to `False.`')
-
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8Test::test_int8_serialization_regression
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8GPT2Test::test_int8_serialization_regression
-  /home/ubuntu/src/transformers/src/transformers/quantizers/auto.py:178: UserWarning: You passed `quantization_config` or equivalent parameters to `from_pretrained` but the model you're loading already has a `quantization_config` attribute. The `quantization_config` from the model will be used.
-    warnings.warn(warning_msg)
-
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_with_keep_in_fp32_serialized
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8T5Test::test_inference_without_keep_in_fp32
-  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1231: UserWarning: Using the model-agnostic default `max_length` (=20) to control the generation length. We recommend setting `max_new_tokens` to control the maximum length of the generation.
-    warnings.warn(
-
 tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestCpuGpu::test_cpu_gpu_loading_custom_device_map
-  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:1900: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cuda, whereas the model is on meta. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('meta') before running `.generate()`.
+  /home/ubuntu/src/transformers/src/transformers/generation/utils.py:2137: UserWarning: You are calling .generate() with the `input_ids` being on a device type different than your model's device. `input_ids` is on cuda, whereas the model is on meta. You may experience unexpected behaviors or slower generation. Please make sure that you have put `input_ids` to the correct device by calling for example input_ids = input_ids.to('meta') before running `.generate()`.
     warnings.warn(
-
-tests/quantization/bnb/test_mixed_int8.py: 18 warnings
-  /home/ubuntu/src/transformers/src/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be deprecated in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
-    warnings.warn(
-
-tests/quantization/bnb/test_mixed_int8.py::MixedInt8TestTraining::test_training
-  /home/ubuntu/src/bnb/bitsandbytes/autograd/_functions.py:316: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
-    warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-================= 45 passed, 31 warnings in 254.32s (0:04:14) ==================
+============= 58 failed, 4 passed, 1 warning in 169.72s (0:02:49) ==============

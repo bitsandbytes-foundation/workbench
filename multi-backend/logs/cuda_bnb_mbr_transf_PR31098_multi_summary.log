@@ -1,5 +1,19 @@
 4-bit Test Error Summary:
-No errors found in 4-bit tests.
+     83 For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+     83 Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+     83 CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+     77 RuntimeError: CUDA error: an illegal memory access was encountered
+     18 
+      6 torch._dynamo.exc.InternalTorchDynamoError: RuntimeError: CUDA error: an illegal memory access was encountered
+      6 torch._dynamo.config.suppress_errors = True
+      6 import torch._dynamo
+      6 You can suppress this exception and fall back to eager by setting:
+      2 AssertionError: False is not true
+      1 Items in the second set but not the first:
+      1 AssertionError: Items in the first set but not the second:
+      1 1
+      1 0
+      1 'cpu'
 
 8-bit Test Error Summary:
-No errors found in 8-bit tests.
+     58 TypeError: _has_compatible_shallow_copy_type(): argument 'from' (position 2) must be Tensor, not NoneType
